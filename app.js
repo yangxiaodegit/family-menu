@@ -23,9 +23,37 @@ function initFamilyLink(){
   if($("#liveName"))$("#liveName").value=localStorage.getItem("familyLiveName")||"";
   renderHostStats();
 }
+function loadScriptOnce(src,key){
+  return new Promise((resolve,reject)=>{
+    const selector=`script[data-loader="${key}"]`;
+    const found=document.querySelector(selector);
+    if(found){
+      if(found.dataset.loaded==="1")return resolve();
+      found.addEventListener("load",resolve,{once:true});
+      found.addEventListener("error",()=>reject(new Error(`脚本加载失败：${src}`)),{once:true});
+      return;
+    }
+    const script=document.createElement("script");
+    script.src=src;script.async=true;script.dataset.loader=key;
+    script.onload=()=>{script.dataset.loaded="1";resolve()};
+    script.onerror=()=>{script.remove();reject(new Error(`脚本加载失败：${src}`))};
+    document.head.appendChild(script);
+  });
+}
 async function loadPeerJS(){
   if(typeof Peer!=="undefined")return;
-  await loadScriptOnce("https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js","peerjs");
+  const sources=[
+    "https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js",
+    "https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"
+  ];
+  let lastError=null;
+  for(let i=0;i<sources.length;i++){
+    try{
+      await loadScriptOnce(sources[i],`peerjs-${i}`);
+      if(typeof Peer!=="undefined")return;
+    }catch(error){lastError=error}
+  }
+  throw lastError||new Error("实时通信组件不可用");
 }
 function saveLiveNameAndReconnect(){persistLiveName();ensureFamilyConnection()}
 function hostHistory(){
