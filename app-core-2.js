@@ -58,8 +58,12 @@ function openAddToMeal(meal){
   $("#pickDialog").showModal();
 }
 function choose(arr){return arr[Math.floor(Math.random()*arr.length)]}
+const lastMealRecommendation={};
 function candidates(meal,cats){
-  return state.dishes.filter(d=>(d.meals||[]).includes(meal) && cats.includes(d.category));
+  const available=state.dishes.filter(d=>(d.meals||[]).includes(meal) && cats.includes(d.category));
+  if(meal!=="早餐")return available;
+  const curated=available.filter(d=>(d.tags||[]).includes("早餐优选"));
+  return curated.length?curated:available;
 }
 function buildRandom(){
   const slots=[
@@ -108,6 +112,7 @@ function buildScientific(){
     const cost=menuCost(menu), budget=Number(state.budget?.daily||0);
     if(budget>0 && cost>budget) sc += ((cost-budget)/budget)**2 * (state.budget.mode==="save"?8:3);
     sc -= menu.reduce((s,it)=>{const d=state.dishes.find(x=>x.id===it.dishId);return s+(d?pantryCoverage(d):0)},0)*0.05;
+    sc += menu.reduce((s,it)=>s+recentDishPenalty(it.dishId),0);
     if(sc<bestScore){bestScore=sc;best=menu}
   }
   state.menu=best||[];save();renderMenu();toast("已按当前营养目标生成搭配");
@@ -125,7 +130,7 @@ function makeMealCandidate(meal){
   const maxSpice=Number(state.settings.maxSpice??2),used=new Set(),out=[];
   const slots=meal==="早餐"?[["主食"],["蛋白","奶饮","豆制品"],["水果"]]:[["主食"],["荤菜","蛋白","豆制品"],["素菜"],["素菜"],["汤"]];
   slots.forEach(cats=>{
-    let arr=state.dishes.filter(d=>(d.meals||[]).includes(meal)&&cats.includes(d.category)&&!dishBlocked(d)&&Number(d.spiceLevel||0)<=maxSpice&&!used.has(d.id)&&(!state.settings.preferredCookMethod||d.cookMethod===state.settings.preferredCookMethod));
+    let arr=candidates(meal,cats).filter(d=>!dishBlocked(d)&&Number(d.spiceLevel||0)<=maxSpice&&!used.has(d.id)&&(meal==="早餐"||!state.settings.preferredCookMethod||d.cookMethod===state.settings.preferredCookMethod));
     if(!arr.length)return;
     const sample=arr.sort(()=>Math.random()-.5).slice(0,35).sort((a,b)=>pantryCoverage(b)-pantryCoverage(a));
     const d=sample[0]||arr[0];used.add(d.id);out.push({id:nid(),meal,dishId:d.id,servings:1});
@@ -136,7 +141,24 @@ function recommendMeal(meal,randomMode=false){
   const candidates=[];
   for(let i=0;i<(randomMode?140:520);i++){const m=makeMealCandidate(meal);candidates.push({m,s:mealCandidateScore(m,meal)})}
   candidates.sort((a,b)=>a.s-b.s);
-  const chosen=randomMode?candidates[Math.floor(Math.random()*Math.min(15,candidates.length))]:candidates[0];
+  let chosen;
+  if(randomMode){
+    chosen=candidates[Math.floor(Math.random()*Math.min(15,candidates.length))];
+  }else{
+    // 从营养评分靠前且主食不同的方案中轮换，避免每次都推荐同一份早餐。
+    const diversified=[],seenMains=new Set();
+    for(const row of candidates){
+      const main=row.m.map(it=>state.dishes.find(d=>d.id===it.dishId)).find(d=>d?.category==="主食");
+      const key=main?.id||row.m.map(it=>it.dishId).join("|");
+      if(seenMains.has(key))continue;
+      seenMains.add(key);diversified.push({row,key});
+      if(diversified.length>=5)break;
+    }
+    const fresh=diversified.filter(x=>x.key!==lastMealRecommendation[meal]);
+    const picked=choose(fresh.length?fresh:diversified);
+    chosen=picked?.row||candidates[0];
+    if(picked)lastMealRecommendation[meal]=picked.key;
+  }
   state.menu=state.menu.filter(x=>x.meal!==meal).concat(clone(chosen?.m||[]));
   save();renderMenu();toast(`${meal}${randomMode?"随机":"科学"}推荐已生成`);
 }

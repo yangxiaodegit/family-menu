@@ -111,6 +111,11 @@ function load(){
       const existingNames=new Set(x.foods.map(f=>f.name));
       EXTRA_FOODS.forEach(f=>{if(!existingNames.has(f.name))x.foods.push(clone(f))});
       x.dishes.forEach(d=>{if(d.recipe==null)d.recipe="";if(d.spiceLevel==null)d.spiceLevel=0;if(d.image==null)d.image="";if(d.cookMethod==null)d.cookMethod="炒"});
+      // V8.1.3：用固定 ID 更新内置早餐，不清空家庭已有的菜单、成员或历史。
+      HOME_DISHES_1000.filter(d=>(d.tags||[]).includes("早餐优选")).forEach(d=>{
+        const index=x.dishes.findIndex(item=>item.id===d.id);
+        if(index>=0)x.dishes[index]=clone(d);else x.dishes.push(clone(d));
+      });
       return x;
     }
   }catch(e){}
