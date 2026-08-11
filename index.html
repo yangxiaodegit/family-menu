@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家庭点菜</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2f6d4e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="家庭点菜">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><h1>🍚 家庭点菜</h1><p>点菜、随机菜单、配料营养识别、今日营养预览</p></div>
+    <div class="actions"><button id="installAppBtn" class="btn soft" onclick="installApp()">📲 添加到桌面</button><div class="pill">1000道家常菜 · 家庭实时点菜</div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="today">今日点菜</button>
+    <button class="tab" data-tab="live">👨‍👩‍👧 实时一起点菜</button>
+    <button class="tab" data-tab="dishes">菜品库</button>
+    <button class="tab" data-tab="foods">食材营养库</button>
+    <button class="tab" data-tab="members">家庭成员</button>
+    <button class="tab" data-tab="pantry">冰箱库存</button>
+    <button class="tab" data-tab="weekly">一周菜单</button>
+    <button class="tab" data-tab="history">📚 历史记录</button>
+    <button class="tab" data-tab="budget">预算</button>
+    <button class="tab" data-tab="settings">设置</button>
+  </div>
+
+  <section id="today" class="panel active">
+    <div class="home-hero">
+      <div>
+        <div class="eyebrow">今天吃什么？</div>
+        <h2>把一家人的晚饭，简单决定下来。</h2>
+        <p>1000 道家常菜 · 营养搭配 · 一起点菜 · 自动购物清单</p>
+      </div>
+      <div class="hero-actions">
+        <button class="hero-btn main" onclick="buildScientific()">✨ 科学搭配</button>
+        <button class="hero-btn" onclick="buildRandom()">🎲 随机一套</button>
+        <button class="hero-btn" onclick="document.querySelector('[data-tab=&quot;live&quot;]').click()">👨‍👩‍👧 一起点菜</button>
+      </div>
+    </div>
+
+    <div class="meal-recommend-grid">
+      <div class="meal-recommend-card"><div><span class="meal-icon">🌅</span><div><b>早餐</b><p>主食 + 蛋白/奶 + 水果</p></div></div><div class="actions"><button class="btn primary small" onclick="recommendMeal('早餐',false)">科学推荐</button><button class="btn small" onclick="recommendMeal('早餐',true)">随机</button></div></div>
+      <div class="meal-recommend-card"><div><span class="meal-icon">☀️</span><div><b>午餐</b><p>主食 + 蛋白 + 2蔬菜 + 汤</p></div></div><div class="actions"><button class="btn primary small" onclick="recommendMeal('午餐',false)">科学推荐</button><button class="btn small" onclick="recommendMeal('午餐',true)">随机</button></div></div>
+      <div class="meal-recommend-card"><div><span class="meal-icon">🌙</span><div><b>晚餐</b><p>主食 + 蛋白 + 2蔬菜 + 汤</p></div></div><div class="actions"><button class="btn primary small" onclick="recommendMeal('晚餐',false)">科学推荐</button><button class="btn small" onclick="recommendMeal('晚餐',true)">随机</button></div></div>
+    </div>
+
+    <div class="quick-strip">
+      <button onclick="document.querySelector('[data-tab=&quot;dishes&quot;]').click()">🍳 菜品库 <b>1000</b></button>
+      <button onclick="document.querySelector('[data-tab=&quot;pantry&quot;]').click()">🧊 看冰箱</button>
+      <button onclick="document.querySelector('[data-tab=&quot;weekly&quot;]').click()">📅 一周菜单</button>
+      <button onclick="document.querySelector('[data-tab=&quot;members&quot;]').click()">❤️ 家庭成员</button>
+    </div>
+
+    <div class="grid">
+      <div class="card menu-card-main">
+        <div class="meal-head">
+          <div><h2>今日菜单</h2><div class="note">点“加菜”可以自由组合，也可以让系统帮你搭。</div></div>
+          <div class="actions"><button class="btn small primary" onclick="saveTodayToHistory()">✓ 今天就吃这些</button><button class="btn small" onclick="clearMenu()">清空菜单</button></div>
+        </div>
+        <div id="menuHolder"></div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h2>菜单营养预览</h2>
+          <div id="nutritionSummary"></div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h2>全家备菜汇总</h2>
+          <div id="shoppingList" class="shopping"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="live" class="panel">
+    <div class="grid">
+      <div class="card">
+        <div class="meal-head">
+          <div><h2>一起点菜</h2><div class="note">打开后会自动连接家庭点菜网络，不需要手动设置。</div></div>
+          <span id="liveStatus" class="tag">正在连接…</span>
+        </div>
+
+        <label>你的称呼</label>
+        <div class="actions">
+          <input id="liveName" placeholder="例如：爸爸 / 妈妈 / 小宝" style="flex:1;min-width:180px" onchange="saveLiveNameAndReconnect()">
+          <button id="manualReconnectBtn" class="btn primary" onclick="ensureFamilyConnection()">重新连接</button>
+        </div>
+
+        <div class="preview-box" style="margin-top:12px">
+          <b>固定家庭链接</b>
+          <div class="note">把这个链接保存到家庭群。家人打开同一个链接即可同步点菜、历史、库存和设置。</div>
+          <div class="actions" style="margin-top:8px">
+            <input id="familyLink" readonly style="flex:1;min-width:180px">
+            <button class="btn small primary" onclick="copyFamilyLink()">复制链接</button>
+            <button class="btn small" onclick="shareFamilyLink()">分享</button>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+        <h3>在线成员</h3>
+        <div id="liveMembers"></div>
+      </div>
+
+      <div class="card">
+        <h2>大家已经点了什么</h2>
+        <div id="liveOrderSummary"><div class="empty">连接后显示实时点菜结果</div></div>
+        <div class="form-actions">
+          <button class="btn primary" onclick="applyLiveOrdersToToday()">加入今日菜单</button>
+          <button class="btn" onclick="clearMyVotes()">清空我点的</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="meal-head">
+        <div><h2>一起点菜</h2><div class="note">你点“我要吃”后，主机和其他家人会实时看到。</div></div>
+        <input id="liveDishSearch" placeholder="搜索菜名" oninput="renderLiveDishList()" style="max-width:260px">
+      </div>
+      <div id="liveDishList" class="dish-list"></div>
+    </div>
+  </section>
+
+  <div id="hostStatus" style="display:none"></div><div id="hostStats" style="display:none"></div>
+
+  <section id="history" class="panel">
+    <div class="grid">
+      <div class="card">
+        <div class="meal-head">
+          <div><h2>饮食历史</h2><div class="note">“今天就吃这些”后会保存到主机本地。家人连接主机时可以读取同一份历史。</div></div>
+          <button class="btn primary" onclick="saveTodayToHistory()">✓ 记录今天</button>
+        </div>
+        <div id="historyList"></div>
+      </div>
+      <div class="card">
+        <h2>最近 7 天分析</h2>
+        <div id="historyInsight"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dishes" class="panel">
+    <div class="card">
+      <div class="library-hero"><div><div class="eyebrow">家庭菜谱</div><h2>1000 道家常菜</h2><div class="note">所有菜都可以继续编辑；配料克数会参与营养、预算和购物清单计算。</div></div><button class="btn primary" onclick="openDishForm()">＋ 新增菜品</button></div>
+      <div class="category-chips cook-chips">
+        <button onclick="setCookMethod('')">全部做法</button><button onclick="setCookMethod('炒')">🥘 炒</button><button onclick="setCookMethod('蒸')">♨️ 蒸</button><button onclick="setCookMethod('煮')">🍲 煮</button><button onclick="setCookMethod('煎')">🍳 煎</button><button onclick="setCookMethod('炖')">🍖 炖</button><button onclick="setCookMethod('焖')">🫕 焖</button><button onclick="setCookMethod('烤')">🔥 烤</button><button onclick="setCookMethod('炸')">🍤 炸</button><button onclick="setCookMethod('凉拌')">🥗 凉拌</button><button onclick="setCookMethod('汤羹')">🥣 汤羹</button>
+      </div>
+      <div class="category-chips">
+        <button onclick="setDishCategory('')">全部</button><button onclick="setDishCategory('荤菜')">🥩 荤菜</button><button onclick="setDishCategory('素菜')">🥬 素菜</button><button onclick="setDishCategory('豆制品')">◻️ 豆制品</button><button onclick="setDishCategory('汤')">🥣 汤羹</button><button onclick="setDishCategory('主食')">🍚 主食</button>
+      </div>
+      <div class="searchrow">
+        <input id="dishSearch" placeholder="搜索菜名、配料、标签" oninput="renderDishes()">
+        <select id="dishCat" onchange="renderDishes()">
+          <option value="">全部分类</option><option>主食</option><option>荤菜</option><option>豆制品</option><option>素菜</option><option>汤</option><option>水果</option><option>蛋白</option><option>奶饮</option>
+        </select>
+        <select id="dishSpice" onchange="renderDishes()"><option value="">全部辣度</option><option value="0">🌿 不辣</option><option value="1">🌶 微辣</option><option value="2">🌶🌶 中辣</option><option value="3">🌶🌶🌶 辣</option><option value="4">🔥 很辣</option></select>
+        <select id="dishCook" onchange="renderDishes()"><option value="">全部做法</option><option value="煎">🍳 煎</option><option value="炸">🍤 炸</option><option value="煮">🍲 煮</option><option value="炒">🥘 炒</option><option value="蒸">♨️ 蒸</option><option value="炖">🍖 炖</option><option value="焖">🫕 焖</option><option value="烤">🔥 烤</option><option value="凉拌">🥗 凉拌</option><option value="汤羹">🥣 汤羹</option></select>
+        <button class="btn wide" onclick="openDishForm()">新增</button>
+      </div>
+      <div id="dishList" class="dish-list"></div>
+    </div>
+  </section>
+
+  <section id="foods" class="panel">
+    <div class="card">
+      <div class="meal-head"><div><h2>食材营养库</h2><div class="note">营养值单位：每100g；“1个重量”用于识别“鸡蛋 2个”这类写法。</div></div><button class="btn primary" onclick="openFoodForm()">＋ 新增食材</button></div>
+      <div class="searchrow"><input id="foodSearch" placeholder="搜索食材或别名" oninput="renderFoods()"><span></span><button class="btn wide" onclick="openFoodForm()">新增</button></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>食材</th><th>kcal</th><th>蛋白</th><th>脂肪</th><th>碳水</th><th>纤维</th><th>钠mg</th><th>1个(g)</th><th>元/500g</th><th></th></tr></thead><tbody id="foodTable"></tbody></table>
+      </div>
+      <div class="note" style="margin-top:10px">示例数据用于家庭菜单估算，不替代食品包装营养成分表或专业营养建议。品牌、产地、熟制方式会导致营养值变化，你可以直接修改。</div>
+    </div>
+  </section>
+
+
+  <section id="members" class="panel">
+    <div class="grid">
+      <div class="card">
+        <div class="meal-head"><div><h2>家庭成员</h2><div class="note">可以分别设置目标、忌口和过敏原；科学搭配会自动避开全家的禁用食材。</div></div><button class="btn primary" onclick="openMemberForm()">＋ 新增成员</button></div>
+        <div id="memberList" class="dish-list"></div>
+      </div>
+      <div class="card">
+        <h2>全家饮食限制</h2>
+        <div id="restrictionSummary"></div>
+        <div class="note" style="margin-top:10px">说明：家庭成员的“过敏/忌口”按食材名称或别名匹配。比如填写“花生,虾”，含这些配料的菜不会进入科学搭配。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pantry" class="panel">
+    <div class="grid">
+      <div class="card">
+        <div class="meal-head"><div><h2>冰箱 / 家中现有食材</h2><div class="note">录入现有库存后，科学搭配会优先选择能消耗现有食材的菜。</div></div><button class="btn primary" onclick="openPantryForm()">＋ 加库存</button></div>
+        <div id="pantryList"></div>
+      </div>
+      <div class="card">
+        <h2>按库存推荐</h2>
+        <p class="note">根据当前库存匹配菜品，优先显示“家里已经有大部分配料”的菜。</p>
+        <div id="pantryRecommendations" class="dish-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="weekly" class="panel">
+    <div class="card">
+      <div class="meal-head">
+        <div><h2>一周菜单</h2><div class="note">一次生成 7 天，可减少重复，并自动汇总整周采购清单。</div></div>
+        <div class="actions"><button class="btn primary" onclick="generateWeek()">✨ 生成科学周菜单</button><button class="btn soft" onclick="randomWeek()">🎲 随机一周</button></div>
+      </div>
+      <div id="weekBoard" class="week-board"></div>
+    </div>
+    <div class="grid" style="margin-top:14px">
+      <div class="card"><h2>一周营养均值</h2><div id="weekNutrition"></div></div>
+      <div class="card"><h2>一周购物清单</h2><div id="weekShopping" class="shopping"></div></div>
+    </div>
+  </section>
+
+  <section id="budget" class="panel">
+    <div class="grid">
+      <div class="card">
+        <h2>家庭餐饮预算</h2>
+        <label>每日预算（全家，元）</label><input id="dailyBudget" type="number" step="1">
+        <label>预算偏好</label>
+        <select id="budgetMode"><option value="normal">均衡</option><option value="save">优先省钱</option><option value="quality">品质优先</option></select>
+        <div class="form-actions"><button class="btn primary" onclick="saveBudget()">保存预算</button></div>
+        <div class="note" style="margin-top:10px">食材价格在“食材营养库”里维护，单位为 元/500g。科学搭配会把预计成本纳入评分。</div>
+      </div>
+      <div class="card">
+        <h2>今日预计成本</h2>
+        <div id="todayCost"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="settings" class="panel">
+    <div class="grid">
+      <div class="card">
+        <h2>默认营养目标</h2>
+        <label>家庭人数（兼容旧数据；如已建立成员档案，会优先按成员数量）</label><input id="familyCount" type="number" min="1" max="20">
+        <div class="settings-grid">
+          <div><label>能量 kcal/人/天</label><input id="t_kcal" type="number"></div>
+          <div><label>蛋白质 g</label><input id="t_protein" type="number"></div>
+          <div><label>脂肪 g</label><input id="t_fat" type="number"></div>
+          <div><label>碳水 g</label><input id="t_carbs" type="number"></div>
+          <div><label>膳食纤维 g</label><input id="t_fiber" type="number"></div>
+          <div><label>钠 mg</label><input id="t_sodium" type="number"></div>
+          <div><label>全家最高辣度</label><select id="maxSpice"><option value="0">🌿 不辣</option><option value="1">🌶 微辣</option><option value="2">🌶🌶 中辣</option><option value="3">🌶🌶🌶 辣</option><option value="4">🔥 很辣</option></select></div>
+          <div><label>推荐偏好做法</label><select id="preferredCookMethod"><option value="">不限</option><option value="蒸">♨️ 蒸</option><option value="煮">🍲 煮</option><option value="炒">🥘 炒</option><option value="煎">🍳 煎</option><option value="炖">🍖 炖</option><option value="焖">🫕 焖</option><option value="烤">🔥 烤</option><option value="凉拌">🥗 凉拌</option><option value="汤羹">🥣 汤羹</option><option value="炸">🍤 炸</option></select></div>
+        </div>
+        <div class="form-actions"><button class="btn primary" onclick="saveSettings()">保存设置</button></div>
+        <div class="note" style="margin-top:10px">默认值只是通用示例。儿童、孕妇、老人、减脂/增肌或有疾病管理需求时，请按实际需要调整目标。</div>
+      </div>
+      <div class="card">
+        <h2>备份与恢复</h2>
+        <p class="note">所有菜品、食材、目标和菜单都保存在当前浏览器。建议修改较多后导出一次备份。</p>
+        <div class="actions">
+          <button class="btn primary" onclick="exportData()">导出 JSON 备份</button>
+          <label class="btn" style="display:inline-block">导入 JSON<input type="file" accept=".json,application/json" onchange="importData(this)" hidden></label>
+          <button class="btn danger" onclick="resetData()">恢复示例数据</button>
+        </div>
+        <div class="hr"></div>
+        <h3>配料识别格式</h3>
+        <div class="preview-box note">
+          推荐每行一种食材：<br><b>鸡胸肉 150g</b><br><b>西兰花 200克</b><br><b>鸡蛋 2个</b><br><b>牛奶 250ml</b><br><br>
+          如果未识别，先到“食材营养库”新增该食材，或给食材补充别名。
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<dialog id="dishDialog"><div class="modal">
+  <div class="modal-head"><h2 id="dishModalTitle">新增菜品</h2><button class="iconbtn" onclick="$('#dishDialog').close()">×</button></div>
+  <div class="form-grid">
+    <div><label>菜名</label><input id="dishName" placeholder="例如：香煎鸡胸肉"></div>
+    <div><label>分类</label><select id="dishCategory"><option>主食</option><option>荤菜</option><option>豆制品</option><option>素菜</option><option>汤</option><option>水果</option><option>蛋白</option><option>奶饮</option></select></div>
+    <div><label>适合餐次（逗号分隔）</label><input id="dishMeals" placeholder="早餐,午餐,晚餐"></div>
+    <div><label>标签（逗号分隔）</label><input id="dishTags" placeholder="高蛋白,快手"></div>
+    <div><label>辣度</label><select id="dishSpiceEdit"><option value="0">🌿 不辣</option><option value="1">🌶 微辣</option><option value="2">🌶🌶 中辣</option><option value="3">🌶🌶🌶 辣</option><option value="4">🔥 很辣</option></select></div>
+    <div><label>烹饪方式</label><select id="dishCookEdit"><option value="炒">🥘 炒</option><option value="蒸">♨️ 蒸</option><option value="煮">🍲 煮</option><option value="煎">🍳 煎</option><option value="炖">🍖 炖</option><option value="焖">🫕 焖</option><option value="烤">🔥 烤</option><option value="炸">🍤 炸</option><option value="凉拌">🥗 凉拌</option><option value="汤羹">🥣 汤羹</option></select></div>
+  </div>
+  <label>菜品图片（可选，默认已有自动封面）</label><input type="file" accept="image/*" onchange="loadDishImage(this)"><input id="dishImageData" type="hidden"><img id="dishImagePreview" class="dish-edit-preview" style="display:none">
+  <label>配料表（按1人份）</label><textarea id="dishIngredients"></textarea><label>做法 / 备注</label><textarea id="dishRecipe" placeholder="例如：鸡胸肉切片，少油煎熟；西兰花焯水后翻炒。"></textarea>
+  <div id="dishPreview" class="preview-box"></div>
+  <div class="form-actions"><button class="btn primary" onclick="saveDish()">保存菜品</button><button class="btn" onclick="$('#dishDialog').close()">取消</button></div>
+</div></dialog>
+
+<dialog id="foodDialog"><div class="modal">
+  <div class="modal-head"><h2 id="foodModalTitle">新增食材</h2><button class="iconbtn" onclick="$('#foodDialog').close()">×</button></div>
+  <div class="form-grid">
+    <div><label>食材名称</label><input id="foodName"></div><div><label>别名（逗号分隔）</label><input id="foodAliases"></div>
+    <div><label>能量 kcal/100g</label><input id="fKcal" type="number" step="0.1"></div><div><label>蛋白质 g/100g</label><input id="fProtein" type="number" step="0.1"></div>
+    <div><label>脂肪 g/100g</label><input id="fFat" type="number" step="0.1"></div><div><label>碳水 g/100g</label><input id="fCarbs" type="number" step="0.1"></div>
+    <div><label>膳食纤维 g/100g</label><input id="fFiber" type="number" step="0.1"></div><div><label>钠 mg/100g</label><input id="fSodium" type="number" step="1"></div>
+    <div><label>1个/1片默认重量(g)</label><input id="fUnit" type="number" step="1"></div><div><label>参考价格（元/500g）</label><input id="fPrice" type="number" step="0.1"></div>
+  </div>
+  <div class="form-actions"><button class="btn primary" onclick="saveFood()">保存食材</button><button class="btn" onclick="$('#foodDialog').close()">取消</button></div>
+</div></dialog>
+
+<dialog id="pickDialog"><div class="modal">
+  <div class="modal-head"><h2 id="pickMealTitle">加菜</h2><button class="iconbtn" onclick="$('#pickDialog').close()">×</button></div>
+  <div id="pickMealList"></div>
+</div></dialog>
+
+
+<dialog id="memberDialog"><div class="modal">
+  <div class="modal-head"><h2 id="memberModalTitle">新增家庭成员</h2><button class="iconbtn" onclick="$('#memberDialog').close()">×</button></div>
+  <div class="form-grid">
+    <div><label>姓名/称呼</label><input id="memberName" placeholder="例如：爸爸"></div>
+    <div><label>类型</label><select id="memberType"><option>成人</option><option>儿童</option><option>老人</option></select></div>
+    <div><label>每日能量目标 kcal</label><input id="mKcal" type="number"></div>
+    <div><label>蛋白质目标 g</label><input id="mProtein" type="number"></div>
+  </div>
+  <label>过敏食材（逗号分隔）</label><input id="memberAllergy" placeholder="例如：花生,虾">
+  <label>忌口 / 不喜欢（逗号分隔）</label><input id="memberAvoid" placeholder="例如：香菜,肥肉">
+  <div class="form-actions"><button class="btn primary" onclick="saveMember()">保存成员</button><button class="btn" onclick="$('#memberDialog').close()">取消</button></div>
+</div></dialog>
+
+<dialog id="pantryDialog"><div class="modal">
+  <div class="modal-head"><h2>添加库存</h2><button class="iconbtn" onclick="$('#pantryDialog').close()">×</button></div>
+  <label>食材</label><select id="pantryFood"></select>
+  <label>现有数量（克）</label><input id="pantryGrams" type="number" step="10">
+  <div class="form-actions"><button class="btn primary" onclick="savePantry()">保存库存</button><button class="btn" onclick="$('#pantryDialog').close()">取消</button></div>
+</div></dialog>
+
+
+<dialog id="installDialog"><div class="modal">
+  <div class="modal-head"><h2>把家庭点菜装到手机</h2><button class="iconbtn" onclick="$('#installDialog').close()">×</button></div>
+  <div id="installHelp" class="preview-box note"></div>
+  <div class="form-actions"><button class="btn primary" onclick="$('#installDialog').close()">知道了</button></div>
+</div></dialog>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script></body></html>
