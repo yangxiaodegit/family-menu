@@ -1,8 +1,8 @@
 {
-  "version": "0.2.8",
-  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.8 使用 IPv4-only 多镜像升级：jsDelivr CDN 优先，Fastly 次选，GitHub Pages 兜底。",
-  "setup": "PromotionFinanceBridge_Setup_v0.2.8.exe",
-  "sha256": "20ba460d460c9d99db3bce8b3c253e80df52a7be282627ddac41ff3bb028dbfc",
-  "size": 11819520,
-  "published_at": "2026-09-28T16:09:57Z"
+  "version": "0.2.10",
+  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.10 仅使用 GitHub 官方 api.github.com Contents API；保留系统代理并强制 IPv4，继续校验文件大小和 SHA256。",
+  "setup": "PromotionFinanceBridge_Setup_v0.2.10.exe",
+  "sha256": "37376b93ce69c87a2d95fd4d55db0d9289e7edfcdc7446254c16ab6d17b39a2f",
+  "size": 11816448,
+  "published_at": "2026-09-28T16:29:33Z"
 }
