@@ -1,8 +1,8 @@
 {
-  "version": "0.2.12",
-  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.12 Windows 使用 curl.exe --ipv4 --http1.1 访问 GitHub 官方 api.github.com Contents API；保留系统代理兼容并继续校验文件大小和 SHA256。",
-  "setup": "PromotionFinanceBridge_Setup_v0.2.12.exe",
-  "sha256": "f7f09ada748c3b618b058d82cf42984cd3165ece4ccc0ed204dd0d5bd597e48d",
-  "size": 11820032,
-  "published_at": "2026-09-28T16:40:03Z"
+  "version": "0.2.13",
+  "notes": "v0.2.13 增加真实在线升级进度：显示下载百分比、已下载/总大小，并依次显示校验中、安装中和自动重启状态。",
+  "setup": "PromotionFinanceBridge_Setup_v0.2.13.exe",
+  "sha256": "55ad7264090e3947501c4c46093d83d3db097d94f043758bf3afc9d2fb6806c6",
+  "size": 11837952,
+  "published_at": "2026-09-28T16:51:20Z"
 }
