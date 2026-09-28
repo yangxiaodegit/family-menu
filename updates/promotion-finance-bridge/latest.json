@@ -1,8 +1,8 @@
 {
-  "version": "0.2.13",
-  "notes": "v0.2.13 增加真实在线升级进度：显示下载百分比、已下载/总大小，并依次显示校验中、安装中和自动重启状态。",
-  "setup": "PromotionFinanceBridge_Setup_v0.2.13.exe",
-  "sha256": "55ad7264090e3947501c4c46093d83d3db097d94f043758bf3afc9d2fb6806c6",
-  "size": 11837952,
-  "published_at": "2026-09-28T16:51:20Z"
+  "version": "0.2.14",
+  "setup": "PromotionFinanceBridge_Setup_v0.2.14.exe",
+  "size": 12657664,
+  "sha256": "c925fd0c8fe7da3c247873181d6576ad9f22a82a97439c802273c6b97980ae94",
+  "published_at": "2026-09-28T17:45:57Z",
+  "notes": "v0.2.14 桌面安装版：无命令行窗口、桌面快捷方式、托盘与原生安装窗口；保留数据和 GitHub 官方 IPv4 在线更新进度。"
 }
