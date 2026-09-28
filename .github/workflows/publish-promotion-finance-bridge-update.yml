@@ -1,0 +1,47 @@
+name: Publish PromotionFinanceBridge Desktop Update
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-promotion-finance-bridge-update.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Receive and verify binary-only distribution
+        env:
+          ARTIFACT_URL: 'https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-73a8-8206-9ed7-cf12f6367610/raw?se=2026-09-28T17%3A52%3A34Z&sp=r&sv=2026-02-06&sr=b&scid=989211fc-23bc-54a0-9deb-65cd37a42db7&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T17%3A33%3A31Z&ske=2026-09-29T17%3A33%3A31Z&sks=b&skv=2026-02-06&sig=rLk0sU/nyfe8Kvx99xGoOjT9J3MjrH3MQ0bD3t/3g0o%3D'
+        run: |
+          curl -L --fail --retry 2 --max-time 60 "$ARTIFACT_URL" -o /tmp/pfb-public.zip
+          python3 - <<'PY'
+          import pathlib,zipfile,io,hashlib,json,struct
+          outer=pathlib.Path('/tmp/pfb-public.zip').read_bytes()
+          assert hashlib.sha256(outer).hexdigest()=='49403d649e694788ea3355612f44c6ce8e1119c7da138865ec00326832dc3524'
+          with zipfile.ZipFile(io.BytesIO(outer)) as z:
+            assert z.namelist()==['public-update.zip']
+            inner=z.read('public-update.zip')
+          name='PromotionFinanceBridge_Setup_v0.2.14.exe'
+          prefix='promotion-finance-bridge/'
+          with zipfile.ZipFile(io.BytesIO(inner)) as z:
+            assert set(z.namelist())=={prefix+name,prefix+'latest.json'}
+            raw=z.read(prefix+name);manifest=z.read(prefix+'latest.json');m=json.loads(manifest)
+          assert m['version']=='0.2.14' and m['setup']==name
+          assert m['sha256']==hashlib.sha256(raw).hexdigest()=='c925fd0c8fe7da3c247873181d6576ad9f22a82a97439c802273c6b97980ae94'
+          assert m['size']==len(raw)==12657664
+          pe=struct.unpack_from('<I',raw,0x3c)[0]
+          assert struct.unpack_from('<H',raw,pe+24+68)[0]==2
+          dest=pathlib.Path('updates/promotion-finance-bridge');dest.mkdir(parents=True,exist_ok=True)
+          (dest/name).write_bytes(raw);(dest/'latest.json').write_bytes(manifest)
+          print('Verified native desktop installer',m['version'],m['sha256'])
+          PY
+      - name: Publish verified package and manifest atomically
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/promotion-finance-bridge/PromotionFinanceBridge_Setup_v0.2.14.exe updates/promotion-finance-bridge/latest.json
+          git commit -m 'Publish verified v0.2.14 GUI installer with desktop shortcuts'
+          git push
