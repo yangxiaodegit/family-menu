@@ -1,0 +1,22 @@
+name: Check PromotionFinanceBridge CDN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/check-pfb-cdn.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check CDN mirrors over IPv4
+        shell: bash
+        run: |
+          set -euo pipefail
+          for u in             'https://cdn.jsdelivr.net/gh/yangxiaodegit/family-menu@main/updates/promotion-finance-bridge/latest.json'             'https://fastly.jsdelivr.net/gh/yangxiaodegit/family-menu@main/updates/promotion-finance-bridge/latest.json'             'https://yangxiaodegit.github.io/family-menu/updates/promotion-finance-bridge/latest.json'
+          do
+            echo "===== $u"
+            curl -4 -L --fail --max-time 15 "$u"
+            echo
+          done
