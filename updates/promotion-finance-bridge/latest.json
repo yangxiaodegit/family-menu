@@ -1,8 +1,8 @@
 {
-  "version": "0.2.6",
-  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.6 使用 GitHub Pages 更新源并强制 IPv4，避免 Windows 上 raw.githubusercontent.com / IPv6 超时。",
-  "setup": "PromotionFinanceBridge_Setup_v0.2.6.exe",
-  "sha256": "a15900d778043e55638d2ca2fa3d33909b30fbc403b0b12b901329373ac15632",
-  "size": 11817472,
-  "published_at": "2026-09-28T15:56:25Z"
+  "version": "0.2.8",
+  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.8 使用 IPv4-only 多镜像升级：jsDelivr CDN 优先，Fastly 次选，GitHub Pages 兜底。",
+  "setup": "PromotionFinanceBridge_Setup_v0.2.8.exe",
+  "sha256": "20ba460d460c9d99db3bce8b3c253e80df52a7be282627ddac41ff3bb028dbfc",
+  "size": 11819520,
+  "published_at": "2026-09-28T16:09:57Z"
 }
