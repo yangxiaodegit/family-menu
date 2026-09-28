@@ -1,0 +1,8 @@
+{
+  "version": "0.2.4",
+  "notes": "在线升级通道已启用；升级保留本地数据。v0.2.4 同时包含推广费日期勾选及 GMV/GSV 可选修复。",
+  "setup": "PromotionFinanceBridge_Setup_v0.2.4.exe",
+  "sha256": "54fb95ba5de908963743fb579d7600a5706e748edc82c8a3facbecd43492110b",
+  "size": 11816960,
+  "published_at": "2026-09-28T15:33:03Z"
+}
