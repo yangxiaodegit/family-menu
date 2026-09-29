@@ -1,0 +1,11 @@
+{
+  "product": "ShopFinanceWorkbench",
+  "version": "1.7.3",
+  "platform": "windows",
+  "arch": "amd64",
+  "setup": "ShopFinance_Setup_v1.7.3.exe",
+  "size": 8190464,
+  "sha256": "3b9e90f15494ec40143f946060db7b50f51b8fe5ccad52cc1c98dfac3e113aff",
+  "published_at": "2026-09-29T02:04:43.185710+00:00",
+  "notes": "新增 GitHub 官方 IPv4 在线更新、真实下载进度、版本完成提示；覆盖安装保留原数据和配置。"
+}

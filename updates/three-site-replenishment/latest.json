@@ -1,0 +1,11 @@
+{
+  "product": "ThreeSiteReplenishment",
+  "version": "2.0.14",
+  "platform": "windows",
+  "arch": "amd64",
+  "setup": "Three_Site_Replenishment_Setup_2.0.14.exe",
+  "size": 16203776,
+  "sha256": "ec4d3a7a69757b59a87eaed68c108c9041ee0ca7e8bfd376d0627a6dcc007cb0",
+  "published_at": "2026-09-29T02:04:43.887515+00:00",
+  "notes": "新增 GitHub 官方 IPv4 在线更新、真实下载进度、版本完成提示；覆盖安装保留原数据和配置。"
+}
