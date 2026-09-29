@@ -1,0 +1,84 @@
+name: Publish Two Workbench Updates
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-two-workbench-updates.yml']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify binary-only distribution and isolate release paths
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-3e38-8209-bd39-e1e1ffb68148/raw?se=2026-09-29T02%3A10%3A56Z&sp=r&sv=2026-02-06&sr=b&scid=85883696-7ebc-5d5f-ade0-b4fb7cb9fad4&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-29T00%3A03%3A41Z&ske=2026-09-30T00%3A03%3A41Z&sks=b&skv=2026-02-06&sig=rOavrWcZnNWVvJAYy25swCyGJn1E%2BDqWEd6RU%2BgmRH4%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 90 "$ARTIFACT_URL" -o /tmp/two-apps.zip
+          python3 - <<'PY'
+          import pathlib,zipfile,io,json,hashlib,struct
+          b=pathlib.Path('/tmp/two-apps.zip').read_bytes()
+          assert hashlib.sha256(b).hexdigest()=='7d5d0dbe6ce7e3b65d709d48b40338b7dce2df693c6651830147673e8102659f'
+          with zipfile.ZipFile(io.BytesIO(b)) as z:
+            assert z.namelist()==['two-apps-public-update.zip']
+            inner=z.read('two-apps-public-update.zip')
+          specs=[('shop-finance','ShopFinanceWorkbench','1.7.3','ShopFinance_Setup_v1.7.3.exe','3b9e90f15494ec40143f946060db7b50f51b8fe5ccad52cc1c98dfac3e113aff',8190464),('three-site-replenishment','ThreeSiteReplenishment','2.0.14','Three_Site_Replenishment_Setup_2.0.14.exe','ec4d3a7a69757b59a87eaed68c108c9041ee0ca7e8bfd376d0627a6dcc007cb0',16203776)]
+          with zipfile.ZipFile(io.BytesIO(inner)) as z:
+            assert set(z.namelist())=={c+'/'+n for c,_,_,setup,_,_ in specs for n in (setup,'latest.json')}
+            for channel,product,version,setup,sha,size in specs:
+              raw=z.read(channel+'/'+setup);mb=z.read(channel+'/latest.json');m=json.loads(mb)
+              assert (m['product'],m['version'],m['platform'],m['arch'],m['setup'])==(product,version,'windows','amd64',setup)
+              assert len(raw)==m['size']==size and m['sha256']==sha==hashlib.sha256(raw).hexdigest()
+              pe=struct.unpack_from('<I',raw,0x3c)[0]
+              assert struct.unpack_from('<H',raw,pe+24+68)[0]==2
+              dest=pathlib.Path('updates')/channel;dest.mkdir(parents=True,exist_ok=True)
+              old=dest/'latest.json'
+              if old.exists():
+                prev=json.loads(old.read_text(encoding='utf-8'))
+                assert tuple(map(int,prev['version'].split('.')))<=tuple(map(int,version.split('.')))
+                assert prev['version']!=version or prev['sha256']==sha
+              (dest/setup).write_bytes(raw);old.write_bytes(mb)
+              print('VERIFIED',channel,version,size,sha)
+          PY
+      - name: Publish only the two requested update channels
+        run: |
+          set -euo pipefail
+          BEFORE="$(git rev-parse HEAD:updates/promotion-finance-bridge)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/shop-finance updates/three-site-replenishment
+          git commit -m 'Release ShopFinance 1.7.3 and ThreeSite 2.0.14 online updates'
+          test "$BEFORE" = "$(git rev-parse HEAD:updates/promotion-finance-bridge)"
+          git push
+  verify_official_download:
+    needs: publish
+    runs-on: windows-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - name: Verify both published installers over official GitHub IPv4
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $curl=Join-Path $env:SystemRoot 'System32/curl.exe'
+          $api='https://api.github.com/repos/yangxiaodegit/family-menu/contents/updates'
+          $specs=@(
+            @{channel='shop-finance';product='ShopFinanceWorkbench';version='1.7.3';hash='3b9e90f15494ec40143f946060db7b50f51b8fe5ccad52cc1c98dfac3e113aff'},
+            @{channel='three-site-replenishment';product='ThreeSiteReplenishment';version='2.0.14';hash='ec4d3a7a69757b59a87eaed68c108c9041ee0ca7e8bfd376d0627a6dcc007cb0'}
+          )
+          foreach($s in $specs){
+            $manifest=Join-Path $env:RUNNER_TEMP ($s.channel+'.json')
+            & $curl -q --ipv4 --http1.1 --fail --silent --show-error --proto '=https' --max-redirs 0 --connect-timeout 10 --max-time 120 -H 'Accept: application/vnd.github.raw+json' -H 'X-GitHub-Api-Version: 2022-11-28' -H 'User-Agent: Workbench-Release-Verification' -o $manifest "$api/$($s.channel)/latest.json?ref=main"
+            if($LASTEXITCODE -ne 0){throw 'Published manifest download failed'}
+            $m=Get-Content -Raw -Encoding utf8 $manifest | ConvertFrom-Json
+            if($m.product -ne $s.product -or $m.version -ne $s.version -or $m.sha256 -ne $s.hash){throw 'Published manifest identity mismatch'}
+            $exe=Join-Path $env:RUNNER_TEMP $m.setup
+            & $curl -q --ipv4 --http1.1 --fail --silent --show-error --proto '=https' --max-redirs 0 --connect-timeout 10 --max-time 180 --max-filesize $m.size -H 'Accept: application/vnd.github.raw+json' -H 'X-GitHub-Api-Version: 2022-11-28' -H 'User-Agent: Workbench-Release-Verification' -o $exe "$api/$($s.channel)/$($m.setup)?ref=main"
+            if($LASTEXITCODE -ne 0){throw 'Published installer download failed'}
+            if((Get-Item $exe).Length -ne $m.size){throw 'Published installer size mismatch'}
+            if((Get-FileHash -Algorithm SHA256 $exe).Hash.ToLowerInvariant() -ne $s.hash){throw 'Published installer SHA256 mismatch'}
+            Write-Host "VERIFIED OFFICIAL IPV4 $($s.channel) v$($s.version) size=$($m.size) SHA256=$($s.hash)"
+          }
