@@ -1,0 +1,139 @@
+name: Publish ThreeSite 2.0.15
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-three-site-2.0.15.yml'
+      - '.github/scripts/verify-three-site-release.py'
+permissions:
+  contents: read
+concurrency:
+  group: publish-three-site-2-0-15
+  cancel-in-progress: false
+env:
+  EXPECTED_SHA256: '60b8a27825df111e1a97604efd58ae05f144f71cd0f4b89d97f2fec39e6dcdf4'
+  EXPECTED_SIZE: '16251392'
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and stage only the approved binary distribution
+        env:
+          ARTIFACT_URL: 'https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-4318-8206-8bff-9abc7471adb4/raw?se=2026-09-29T07%3A56%3A30Z&sp=r&sv=2026-02-06&sr=b&scid=a9db7b18-ae80-57c9-8749-ef7617fb4b4a&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-29T06%3A09%3A45Z&ske=2026-09-30T06%3A09%3A45Z&sks=b&skv=2026-02-06&sig=sCPHfeKrTm%2BokqOwgGTbJMg9XbFIaZsyCPNDomhFh%2Bc%3D'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git merge --ff-only origin/main
+          python3 - <<'PY'
+          import pathlib,zipfile,io,json,hashlib,struct,os,subprocess
+          dest=pathlib.Path('updates/three-site-replenishment')
+          setup='Three_Site_Replenishment_Setup_2.0.15.exe'
+          expected=os.environ['EXPECTED_SHA256'];size=int(os.environ['EXPECTED_SIZE'])
+          previous=json.loads((dest/'latest.json').read_text(encoding='utf-8'))
+          assert tuple(map(int,previous['version'].split('.')))<=(2,0,15),'Refusing to downgrade public updates'
+          if previous['version']=='2.0.15':
+            raw=(dest/setup).read_bytes();mb=(dest/'latest.json').read_bytes()
+          else:
+            assert os.environ.get('ARTIFACT_URL'),'Approved artifact transfer URL is required for first publication'
+            archive=pathlib.Path('/tmp/korea-main-artifact.zip')
+            subprocess.run(['curl','--fail','--location','--proto','=https','--retry','2','--max-time','120','--max-filesize','12654573',os.environ['ARTIFACT_URL'],'-o',str(archive)],check=True)
+            b=archive.read_bytes()
+            assert len(b)==12654573 and hashlib.sha256(b).hexdigest()=='2ca78addb128c43e265eb7ff0e92f4a75d786bc0abe701f1c73dc0885f5ad661'
+            with zipfile.ZipFile(io.BytesIO(b)) as z:
+              assert z.namelist()==['public-update.zip']
+              inner=z.read('public-update.zip')
+            with zipfile.ZipFile(io.BytesIO(inner)) as z:
+              assert set(z.namelist())=={'three-site-replenishment/'+setup,'three-site-replenishment/latest.json'}
+              assert len(z.namelist())==2
+              raw=z.read('three-site-replenishment/'+setup);mb=z.read('three-site-replenishment/latest.json')
+          m=json.loads(mb)
+          assert (m['product'],m['version'],m['platform'],m['arch'],m['setup'])==('ThreeSiteReplenishment','2.0.15','windows','amd64',setup)
+          assert len(raw)==m['size']==size and hashlib.sha256(raw).hexdigest()==m['sha256']==expected
+          pe=struct.unpack_from('<I',raw,0x3c)[0]
+          assert raw[:2]==b'MZ' and raw[pe:pe+4]==b'PE\x00\x00'
+          assert struct.unpack_from('<H',raw,pe+4)[0]==0x8664 and struct.unpack_from('<H',raw,pe+24+68)[0]==2
+          (dest/setup).write_bytes(raw);(dest/'latest.json').write_bytes(mb)
+          print('APPROVED 2.0.15',size,expected)
+          PY
+      - name: Publish update channel without changing other products
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          FINANCE="$(git rev-parse HEAD:updates/shop-finance)"
+          PROMOTION="$(git rev-parse HEAD:updates/promotion-finance-bridge)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add updates/three-site-replenishment/Three_Site_Replenishment_Setup_2.0.15.exe updates/three-site-replenishment/latest.json
+          python3 - <<'PY'
+          import subprocess
+          actual=set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          allowed={'updates/three-site-replenishment/Three_Site_Replenishment_Setup_2.0.15.exe','updates/three-site-replenishment/latest.json'}
+          assert actual<=allowed,actual
+          PY
+          if ! git diff --cached --quiet; then
+            git commit -m 'Release ThreeSite 2.0.15 Korea batch merge online update'
+            test "$FINANCE" = "$(git rev-parse HEAD:updates/shop-finance)"
+            test "$PROMOTION" = "$(git rev-parse HEAD:updates/promotion-finance-bridge)"
+            git push origin HEAD:main
+          fi
+          TAG='three-site-v2.0.15'
+          DIR='updates/three-site-replenishment'
+          EXE='Three_Site_Replenishment_Setup_2.0.15.exe'
+          if gh release view "$TAG" --json tagName >/dev/null 2>&1; then
+            mkdir -p /tmp/existing-release
+            gh release download "$TAG" --pattern "$EXE" --dir /tmp/existing-release
+            echo "$EXPECTED_SHA256  /tmp/existing-release/$EXE" | sha256sum --check -
+          else
+            printf '%s\n' '韩国站已报送批次支持多选合并、预览、同 SKU 数量汇总、原批次完整归档和失败恢复。' '' '使用：韩国站 → 已报送批次 → 勾选至少两个批次 → 合并勾选批次。原批次不重复计入库存，历史成本和箱单发票保持不变。' '' '继续支持 GitHub 官方 IPv4 在线更新、实际下载进度和保留资料的覆盖安装。Windows x64 GUI 安装包。未做代码签名，请勿关闭安全软件。' '' "SHA256: $EXPECTED_SHA256" "Size: $EXPECTED_SIZE bytes" > /tmp/three-site-release-notes.md
+            gh release create "$TAG" "$DIR/$EXE" "$DIR/latest.json" --target "$(git rev-parse HEAD)" --title '三站补货中心 2.0.15 · 韩国批次合并' --notes-file /tmp/three-site-release-notes.md --latest=false
+          fi
+  verify_official_download:
+    needs: publish
+    runs-on: windows-latest
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download official binaries and validate native cross-volume upgrade
+        shell: pwsh
+        run: |
+          python .github/scripts/verify-three-site-release.py
+          if($LASTEXITCODE -ne 0){throw 'Official download or native upgrade validation failed'}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-site-2.0.15-official-verification
+          path: release-verification
+          retention-days: 30
+  attach_verification:
+    needs: verify_official_download
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: three-site-2.0.15-official-verification
+          path: verified
+      - name: Preserve successful native verification with the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,pathlib
+          r=json.loads(pathlib.Path('verified/windows-official-download.json').read_text())
+          assert r['all_passed'] and r['version']=='2.0.15'
+          PY
+          gh release upload three-site-v2.0.15 verified/windows-official-download.json --clobber --repo "$GITHUB_REPOSITORY"
