@@ -1,11 +1,11 @@
 {
-  "version": "2.0.20",
-  "source_commit": "0ee1ba5ff4a97a0a87a1e16f9f98346833840946",
-  "source_tree": "8a0fc80929e9ca71135681ad061668bfce36bad8",
-  "base_commit": "c2acafb2082e81e9baf3e155d5695f3a77d970e5",
-  "workflow_run": "36696472986",
+  "version": "2.0.21",
+  "source_commit": "231af271b15ce305c5bf6d5c5d1d23f7dc3635f4",
+  "source_tree": "f1eba8a571e52b20507e0d535fef437376ec28d2",
+  "base_commit": "03df17b32d1612f77239b11eac637b4aa295c65b",
+  "workflow_run": "36700493918",
   "go_top_level": {
-    "pass": 611,
+    "pass": 618,
     "skip": 124,
     "fail": 0
   },
@@ -16,7 +16,7 @@
   },
   "native_edge_checks": [
     {
-      "name": "native suite targets the final compiled 2.0.20 release",
+      "name": "native suite targets the final compiled 2.0.21 release",
       "passed": true
     },
     {
@@ -28,11 +28,31 @@
       "passed": true
     },
     {
+      "name": "2.0.18 official installer size matches immutable fixture",
+      "passed": true
+    },
+    {
       "name": "actual official 2.0.18 host starts from its registered custom workspace",
       "passed": true
     },
     {
+      "name": "2.0.18 cold host actually retains its shortcut installation CWD",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 cold host opens its own visible native Edge app window",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 initial native window and owned Edge exit gracefully before seeding",
+      "passed": true
+    },
+    {
       "name": "2.0.18 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 seeded old host CWD is the directory the installer must rename",
       "passed": true
     },
     {
@@ -52,11 +72,27 @@
       "passed": true
     },
     {
-      "name": "2.0.18 staged approved 2.0.20 package is byte-identical",
+      "name": "2.0.18 actual old Edge window is still visible at installer handoff",
       "passed": true
     },
     {
-      "name": "2.0.18 → 2.0.20 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.18 staged approved 2.0.21 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 old actual HWND disappeared and old owned browser exited without force",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 restarted Edge CWD cannot pin the installed program tree",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 → 2.0.21 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -68,7 +104,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.20 installer",
+      "name": "installed SetupHelper is exact verified 2.0.21 installer",
       "passed": true
     },
     {
@@ -96,6 +132,10 @@
       "passed": true
     },
     {
+      "name": "2.0.18 final synthetic application and its native Edge window safely exit",
+      "passed": true
+    },
+    {
       "name": "2.0.19 installation and custom workspace are on different Windows drives",
       "passed": true
     },
@@ -104,11 +144,31 @@
       "passed": true
     },
     {
+      "name": "2.0.19 official installer size matches immutable fixture",
+      "passed": true
+    },
+    {
       "name": "actual official 2.0.19 host starts from its registered custom workspace",
       "passed": true
     },
     {
+      "name": "2.0.19 cold host actually retains its shortcut installation CWD",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 cold host opens its own visible native Edge app window",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 initial native window and owned Edge exit gracefully before seeding",
+      "passed": true
+    },
+    {
       "name": "2.0.19 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 seeded old host CWD is the directory the installer must rename",
       "passed": true
     },
     {
@@ -140,11 +200,27 @@
       "passed": true
     },
     {
-      "name": "2.0.19 staged approved 2.0.20 package is byte-identical",
+      "name": "2.0.19 actual old Edge window is still visible at installer handoff",
       "passed": true
     },
     {
-      "name": "2.0.19 → 2.0.20 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.19 staged approved 2.0.21 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 old actual HWND disappeared and old owned browser exited without force",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 restarted Edge CWD cannot pin the installed program tree",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 → 2.0.21 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -156,7 +232,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.20 installer",
+      "name": "installed SetupHelper is exact verified 2.0.21 installer",
       "passed": true
     },
     {
@@ -176,7 +252,139 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.19 all original workbook, station configuration and marker bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 no extra source workbook appears after installation and browser QA",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 final synthetic application and its native Edge window safely exit",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 installation and custom workspace are on different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 official retained installer SHA256 matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 official installer size matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "actual official 2.0.20 host starts from its registered custom workspace",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 cold host actually retains its shortcut installation CWD",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 cold host opens its own visible native Edge app window",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 initial native window and owned Edge exit gracefully before seeding",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "official 2.0.20 directory-lock reproduction starts without a running host",
+      "passed": true
+    },
+    {
+      "name": "authentic official 2.0.20 installer reproduces rename failure from inherited target CWD",
+      "passed": true
+    },
+    {
+      "name": "official 2.0.20 failed rename leaves every old program payload byte intact",
+      "passed": true
+    },
+    {
+      "name": "official 2.0.20 failed rename leaves original business bytes and database rows intact",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 seeded old host CWD is the directory the installer must rename",
+      "passed": true
+    },
+    {
+      "name": "pre-upgrade native backup ZIP has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "native backup contains workspace and business archive",
+      "passed": true
+    },
+    {
+      "name": "nested native business backup has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 original host is running immediately before native installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 actual old Edge window is still visible at installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 staged approved 2.0.21 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 old actual HWND disappeared and old owned browser exited without force",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 restarted Edge CWD cannot pin the installed program tree",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 → 2.0.21 safely shuts down old host and auto-restarts new host",
+      "passed": true
+    },
+    {
+      "name": "installed manifest equals final compiled release manifest",
+      "passed": true
+    },
+    {
+      "name": "every installed payload SHA256 matches final compiled manifest",
+      "passed": true
+    },
+    {
+      "name": "installed SetupHelper is exact verified 2.0.21 installer",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 custom cross-drive workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 database business sentinel records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native backup archive retained byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 installed host retains its real online update endpoint",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -188,7 +396,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -204,7 +412,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -220,7 +428,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -232,7 +440,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -244,7 +452,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -256,7 +464,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -268,7 +476,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -280,7 +488,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -292,7 +500,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "name": "2.0.21 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -312,11 +520,15 @@
       "passed": true
     },
     {
-      "name": "2.0.19 all original workbook, station configuration and marker bytes preserved",
+      "name": "2.0.20 all original workbook, station configuration and marker bytes preserved",
       "passed": true
     },
     {
-      "name": "2.0.19 no extra source workbook appears after installation and browser QA",
+      "name": "2.0.20 no extra source workbook appears after installation and browser QA",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 final synthetic application and its native Edge window safely exit",
       "passed": true
     },
     {
@@ -324,7 +536,11 @@
       "passed": true
     },
     {
-      "name": "both official legacy native upgrade paths completed",
+      "name": "all three official legacy native upgrade paths completed",
+      "passed": true
+    },
+    {
+      "name": "all three actual application window lifetimes proved independently of Playwright",
       "passed": true
     },
     {
@@ -337,42 +553,42 @@
   "independent_rebuild_files": [
     {
       "file": "release/ReplenishmentSuite.exe",
-      "sha256": "bc3d0261b3200d9a32fbee77158b2476823c9de1fc16b29c0cb7ab18cece2393",
-      "independent_sha256": "bc3d0261b3200d9a32fbee77158b2476823c9de1fc16b29c0cb7ab18cece2393"
+      "sha256": "b22b38d86d43fd559d44504fcc69608c395e95a59a0194d048d6833d0139bd2d",
+      "independent_sha256": "b22b38d86d43fd559d44504fcc69608c395e95a59a0194d048d6833d0139bd2d"
     },
     {
       "file": "release/jd/JDSelfOperatedWorkbench.exe",
-      "sha256": "b132c30617bfdbd2f3a3b9458ab23d4d531e7d4b3dc59a2379e90ea2270fea98",
-      "independent_sha256": "b132c30617bfdbd2f3a3b9458ab23d4d531e7d4b3dc59a2379e90ea2270fea98"
+      "sha256": "43356e172a1bcfc612376691e729618c263a226b72dabd5c937f8355d17de03c",
+      "independent_sha256": "43356e172a1bcfc612376691e729618c263a226b72dabd5c937f8355d17de03c"
     },
     {
       "file": "release/pop/JDPOPWorkbench.exe",
-      "sha256": "5a1da8b63996eb833cd83288425db8a2feb1ef95b1a96848beacfd994cf6fdb9",
-      "independent_sha256": "5a1da8b63996eb833cd83288425db8a2feb1ef95b1a96848beacfd994cf6fdb9"
+      "sha256": "e89fd701ccc1d39ae6ddaa57acb36de4b0a694767659f75b4b328348fe1ce45f",
+      "independent_sha256": "e89fd701ccc1d39ae6ddaa57acb36de4b0a694767659f75b4b328348fe1ce45f"
     },
     {
       "file": "release/korea/CoupangKoreaWorkbench.exe",
-      "sha256": "c9ab09d607b48cd37834235c8ab8ba1e42c71295fc096283a198a1ae16337ace",
-      "independent_sha256": "c9ab09d607b48cd37834235c8ab8ba1e42c71295fc096283a198a1ae16337ace"
+      "sha256": "c60bc44992ff34fc3b6b9c2aabab5bcbce11dd27e8e9c662e4bb101e7adb47b4",
+      "independent_sha256": "c60bc44992ff34fc3b6b9c2aabab5bcbce11dd27e8e9c662e4bb101e7adb47b4"
     },
     {
       "file": "installer/suite_payload.zip",
-      "sha256": "c9588b64acf975b37103e19acd49e3e17e5119b247397fad67d6ace173627c70",
-      "independent_sha256": "c9588b64acf975b37103e19acd49e3e17e5119b247397fad67d6ace173627c70"
+      "sha256": "23f6e9e9071fde5d3589aa84990c28ef8c3c3c3095a969173857f439d31150db",
+      "independent_sha256": "23f6e9e9071fde5d3589aa84990c28ef8c3c3c3095a969173857f439d31150db"
     },
     {
-      "file": "Three_Site_Replenishment_Portable_2.0.20.zip",
-      "sha256": "864de5faa2ab3c590c940a961411c3935d37c9dcf630ca36ff9e33974d4a061a",
-      "independent_sha256": "864de5faa2ab3c590c940a961411c3935d37c9dcf630ca36ff9e33974d4a061a"
+      "file": "Three_Site_Replenishment_Portable_2.0.21.zip",
+      "sha256": "da313cfc74f29f8d830cf01e709e26de2736f3584cbef241dcab3e307b05f642",
+      "independent_sha256": "da313cfc74f29f8d830cf01e709e26de2736f3584cbef241dcab3e307b05f642"
     },
     {
-      "file": "Three_Site_Replenishment_Setup_2.0.20.exe",
-      "sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
-      "independent_sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc"
+      "file": "Three_Site_Replenishment_Setup_2.0.21.exe",
+      "sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204",
+      "independent_sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204"
     }
   ],
-  "installer_sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
-  "installer_size": 16251904,
-  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
+  "installer_sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204",
+  "installer_size": 16258048,
+  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19/.20 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
   "unsigned": true
 }
