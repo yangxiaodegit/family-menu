@@ -1,11 +1,11 @@
 {
   "product": "ThreeSiteReplenishment",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "platform": "windows",
   "arch": "amd64",
-  "setup": "Three_Site_Replenishment_Setup_2.0.19.exe",
-  "size": 16251392,
-  "sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
-  "published_at": "2026-09-30T07:23:43.006236+00:00",
-  "notes": "韩国零库存改为计算总库存为0且无在途；韩国补货计划及总控台顶部常驻大号指标，点击查看明细。可售0但有待入库或已报送不再误报，未知库存不按0。保留原批次合并及在线升级。"
+  "setup": "Three_Site_Replenishment_Setup_2.0.20.exe",
+  "size": 16251904,
+  "sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
+  "published_at": "2026-09-30T09:33:59.136500+00:00",
+  "notes": "修复长时间打开软件后点击新版提示需先检查更新的问题：升级确认前后自动复查，安装包变化需重新确认；防止重复点击，检查失败可重试。保留韩国总库存零库存指标、批次合并及三站数据配置。旧版需先保存工作并从托盘安全退出后重新启动，再检查更新。"
 }

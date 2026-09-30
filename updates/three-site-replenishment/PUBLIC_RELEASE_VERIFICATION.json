@@ -1,107 +1,334 @@
 {
-  "version": "2.0.19",
-  "source_commit": "0e40e12f4654ce056426dd00a4d52c7108cec9d5",
-  "source_tree": "3dbe57e47547399194cfcf1da36991bef6cf497e",
-  "base_commit": "dac3ff0d54cbd6c8d27a9fe6211631c8e1a06457",
-  "workflow_run": "36683137683",
-  "definition": "calculated total = available + incoming + active reported = 0; no in-transit quantity",
+  "version": "2.0.20",
+  "source_commit": "0ee1ba5ff4a97a0a87a1e16f9f98346833840946",
+  "source_tree": "8a0fc80929e9ca71135681ad061668bfce36bad8",
+  "base_commit": "c2acafb2082e81e9baf3e155d5695f3a77d970e5",
+  "workflow_run": "36696472986",
   "go_top_level": {
-    "pass": 605,
-    "skip": 123,
+    "pass": 611,
+    "skip": 124,
     "fail": 0
   },
   "javascript": {
-    "pass": 96,
+    "pass": 112,
     "fail": 0,
     "skipped": 0
   },
   "native_edge_checks": [
     {
-      "name": "preservation baseline includes actual seeded source workbooks",
+      "name": "native suite targets the final compiled 2.0.20 release",
       "passed": true
     },
     {
-      "name": "packaged CSP remains enforced without unsafe-eval",
+      "name": "2.0.18 installation and custom workspace are on different Windows drives",
       "passed": true
     },
     {
-      "name": "top metric exists before first calculation without a fabricated zero",
+      "name": "2.0.18 official retained installer SHA256 matches immutable fixture",
       "passed": true
     },
     {
-      "name": "top metric counts only total-zero/no-transit SKU",
+      "name": "actual official 2.0.18 host starts from its registered custom workspace",
       "passed": true
     },
     {
-      "name": "total-zero metric is above the table filters",
+      "name": "2.0.18 preservation baseline includes real seeded source workbooks",
       "passed": true
     },
     {
-      "name": "table filtering does not alter the global Korea KPI",
+      "name": "pre-upgrade native backup ZIP has valid CRC",
       "passed": true
     },
     {
-      "name": "metric click resets filters and opens matching SKU detail list",
+      "name": "native backup contains workspace and business archive",
       "passed": true
     },
     {
-      "name": "prominent KPI fully on screen at 1366x768",
+      "name": "nested native business backup has valid CRC",
       "passed": true
     },
     {
-      "name": "prominent KPI fully on screen at 1920x1080",
+      "name": "2.0.18 original host is running immediately before native installer handoff",
       "passed": true
     },
     {
-      "name": "prominent KPI fully on screen at 1024x768",
+      "name": "2.0.18 staged approved 2.0.20 package is byte-identical",
       "passed": true
     },
     {
-      "name": "top KPI export produces an existing file without new replenishment",
+      "name": "2.0.18 → 2.0.20 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
-      "name": "independent scan matches computed KPI and lists total plus transit fields",
+      "name": "installed manifest equals final compiled release manifest",
       "passed": true
     },
     {
-      "name": "dashboard always includes the Korea zero-stock metric",
+      "name": "every installed payload SHA256 matches final compiled manifest",
       "passed": true
     },
     {
-      "name": "dashboard metric links to identical unfiltered zero-stock list",
+      "name": "installed SetupHelper is exact verified 2.0.20 installer",
       "passed": true
     },
     {
-      "name": "adding in-transit quantity removes zero-stock status and shows visible 0",
+      "name": "2.0.18 custom cross-drive workspace registration preserved",
       "passed": true
     },
     {
-      "name": "zero count drill-down is empty, not stale previous SKU",
+      "name": "2.0.18 database business sentinel records preserved",
       "passed": true
     },
     {
-      "name": "dashboard retains its metric when there are zero matching SKUs",
+      "name": "2.0.18 native backup archive retained byte-for-byte",
       "passed": true
     },
     {
-      "name": "pop keeps its own inventory rules and no Korea-only metric",
+      "name": "2.0.18 installed host retains its real online update endpoint",
       "passed": true
     },
     {
-      "name": "jd keeps its own inventory rules and no Korea-only metric",
+      "name": "2.0.18 all original workbook, station configuration and marker bytes preserved",
       "passed": true
     },
     {
-      "name": "no uncaught browser errors",
+      "name": "2.0.18 no extra source workbook appears after installation and browser QA",
       "passed": true
     },
     {
-      "name": "all original workbook and source bytes remain unchanged",
+      "name": "2.0.19 installation and custom workspace are on different Windows drives",
       "passed": true
     },
     {
-      "name": "no new workbook inserted into input folders",
+      "name": "2.0.19 official retained installer SHA256 matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "actual official 2.0.19 host starts from its registered custom workspace",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "authentic 2.0.19 still displays the now 31-minute-old offer",
+      "passed": true
+    },
+    {
+      "name": "authentic 2.0.19 reproduces stale-offer confirm rejection in real Edge",
+      "passed": true
+    },
+    {
+      "name": "pre-upgrade native backup ZIP has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "native backup contains workspace and business archive",
+      "passed": true
+    },
+    {
+      "name": "nested native business backup has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 original host is running immediately before native installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 staged approved 2.0.20 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 → 2.0.20 safely shuts down old host and auto-restarts new host",
+      "passed": true
+    },
+    {
+      "name": "installed manifest equals final compiled release manifest",
+      "passed": true
+    },
+    {
+      "name": "every installed payload SHA256 matches final compiled manifest",
+      "passed": true
+    },
+    {
+      "name": "installed SetupHelper is exact verified 2.0.20 installer",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 custom cross-drive workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 database business sentinel records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 native backup archive retained byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 installed host retains its real online update endpoint",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "stale_offer: exactly one install after two fresh checks and one consent",
+      "passed": true
+    },
+    {
+      "name": "stale_offer: refresh → confirmation → recheck → exact manifest admission",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "long_confirmation: exactly one install after two fresh checks and one consent",
+      "passed": true
+    },
+    {
+      "name": "long_confirmation: refresh → confirmation → recheck → exact manifest admission",
+      "passed": true
+    },
+    {
+      "name": "confirmation aged past 30 minutes is refreshed after consent",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "new_offer: exactly one install after two fresh checks and one consent",
+      "passed": true
+    },
+    {
+      "name": "new_offer: refresh → confirmation → recheck → exact manifest admission",
+      "passed": true
+    },
+    {
+      "name": "newly discovered version is shown in the native confirmation dialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "changed_manifest: safe visible outcome with no install request",
+      "passed": true
+    },
+    {
+      "name": "changed_manifest: consent count matches whether refresh succeeded",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "refresh_failure: safe visible outcome with no install request",
+      "passed": true
+    },
+    {
+      "name": "refresh_failure: consent count matches whether refresh succeeded",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "post_confirm_failure: safe visible outcome with no install request",
+      "passed": true
+    },
+    {
+      "name": "post_confirm_failure: consent count matches whether refresh succeeded",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "cancel leaves the update button usable and starts no install",
+      "passed": true
+    },
+    {
+      "name": "cancel then retry requires a second explicit consent and installs once",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "rapid_repeat: exactly one install after two fresh checks and one consent",
+      "passed": true
+    },
+    {
+      "name": "rapid_repeat: refresh → confirmation → recheck → exact manifest admission",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "no_new_release: safe visible outcome with no install request",
+      "passed": true
+    },
+    {
+      "name": "no_new_release: consent count matches whether refresh succeeded",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "real upgraded application calculates synthetic Korea total-zero KPI",
+      "passed": true
+    },
+    {
+      "name": "real Korea drill-down still selects only the total-zero/no-transit SKU",
+      "passed": true
+    },
+    {
+      "name": "pop still opens its real business screen without Korea-only KPI",
+      "passed": true
+    },
+    {
+      "name": "jd still opens its real business screen without Korea-only KPI",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 all original workbook, station configuration and marker bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 no extra source workbook appears after installation and browser QA",
+      "passed": true
+    },
+    {
+      "name": "native Edge has no uncaught application JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "both official legacy native upgrade paths completed",
+      "passed": true
+    },
+    {
+      "name": "legacy reproduction and all fixed real-Edge scenarios completed",
       "passed": true
     }
   ],
@@ -110,42 +337,42 @@
   "independent_rebuild_files": [
     {
       "file": "release/ReplenishmentSuite.exe",
-      "sha256": "420fbedf885c679ee7866295ffe66eda48377be2a47b2cf71724ab69a3a926bf",
-      "independent_sha256": "420fbedf885c679ee7866295ffe66eda48377be2a47b2cf71724ab69a3a926bf"
+      "sha256": "bc3d0261b3200d9a32fbee77158b2476823c9de1fc16b29c0cb7ab18cece2393",
+      "independent_sha256": "bc3d0261b3200d9a32fbee77158b2476823c9de1fc16b29c0cb7ab18cece2393"
     },
     {
       "file": "release/jd/JDSelfOperatedWorkbench.exe",
-      "sha256": "65bd74b1f365d2e189ecaa76cf2e127aab7d5b8f18aa2c3f86ff4bf47049add5",
-      "independent_sha256": "65bd74b1f365d2e189ecaa76cf2e127aab7d5b8f18aa2c3f86ff4bf47049add5"
+      "sha256": "b132c30617bfdbd2f3a3b9458ab23d4d531e7d4b3dc59a2379e90ea2270fea98",
+      "independent_sha256": "b132c30617bfdbd2f3a3b9458ab23d4d531e7d4b3dc59a2379e90ea2270fea98"
     },
     {
       "file": "release/pop/JDPOPWorkbench.exe",
-      "sha256": "3b39a6f5d8e5b779c52f587f4070608dae984dcedbc681d6237b8f852a3bd8d0",
-      "independent_sha256": "3b39a6f5d8e5b779c52f587f4070608dae984dcedbc681d6237b8f852a3bd8d0"
+      "sha256": "5a1da8b63996eb833cd83288425db8a2feb1ef95b1a96848beacfd994cf6fdb9",
+      "independent_sha256": "5a1da8b63996eb833cd83288425db8a2feb1ef95b1a96848beacfd994cf6fdb9"
     },
     {
       "file": "release/korea/CoupangKoreaWorkbench.exe",
-      "sha256": "0e66eb2ff73d9c0077ca4573fbd6bda6521dff48f51df749420d9bf63e13d483",
-      "independent_sha256": "0e66eb2ff73d9c0077ca4573fbd6bda6521dff48f51df749420d9bf63e13d483"
+      "sha256": "c9ab09d607b48cd37834235c8ab8ba1e42c71295fc096283a198a1ae16337ace",
+      "independent_sha256": "c9ab09d607b48cd37834235c8ab8ba1e42c71295fc096283a198a1ae16337ace"
     },
     {
       "file": "installer/suite_payload.zip",
-      "sha256": "d2e9910356ede21e576b1da5a2b67832e402c88b3ab96fb467fdbebb1dda1e43",
-      "independent_sha256": "d2e9910356ede21e576b1da5a2b67832e402c88b3ab96fb467fdbebb1dda1e43"
+      "sha256": "c9588b64acf975b37103e19acd49e3e17e5119b247397fad67d6ace173627c70",
+      "independent_sha256": "c9588b64acf975b37103e19acd49e3e17e5119b247397fad67d6ace173627c70"
     },
     {
-      "file": "Three_Site_Replenishment_Portable_2.0.19.zip",
-      "sha256": "57bb390af03e71c757167818b93985eed56540e2459b76493a08ea24b5379d4e",
-      "independent_sha256": "57bb390af03e71c757167818b93985eed56540e2459b76493a08ea24b5379d4e"
+      "file": "Three_Site_Replenishment_Portable_2.0.20.zip",
+      "sha256": "864de5faa2ab3c590c940a961411c3935d37c9dcf630ca36ff9e33974d4a061a",
+      "independent_sha256": "864de5faa2ab3c590c940a961411c3935d37c9dcf630ca36ff9e33974d4a061a"
     },
     {
-      "file": "Three_Site_Replenishment_Setup_2.0.19.exe",
-      "sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
-      "independent_sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba"
+      "file": "Three_Site_Replenishment_Setup_2.0.20.exe",
+      "sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
+      "independent_sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc"
     }
   ],
-  "installer_sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
-  "installer_size": 16251392,
-  "scope": "Synthetic Windows Server 2022 data; not user PC or actual platform final acceptance. Historical private fixture skips are not passes. Go tests use vet=off; existing legacy Win32 vet warnings are not claimed fixed.",
+  "installer_sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
+  "installer_size": 16251904,
+  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
   "unsigned": true
 }
