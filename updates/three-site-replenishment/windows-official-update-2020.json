@@ -1,0 +1,211 @@
+{
+  "version": "2.0.20",
+  "all_passed": true,
+  "size": 16251904,
+  "sha256": "286e48519125db5b1ec54a429f59b24e44d7bc01549a43d28c84e793f288c3cc",
+  "workflow_run": "36697430758",
+  "native_os": "Windows Server 2022",
+  "anonymous_download": true,
+  "cross_volume": true,
+  "upgrade_paths": [
+    "2.0.18 -> 2.0.20",
+    "2.0.19 -> 2.0.20"
+  ],
+  "observed_stages": {
+    "2.0.18": [
+      "downloading",
+      "installing"
+    ],
+    "2.0.19": [
+      "downloading",
+      "installing"
+    ]
+  },
+  "checks": [
+    {
+      "name": "channel identity is correct",
+      "passed": true
+    },
+    {
+      "name": "channel installer matches size and SHA256",
+      "passed": true
+    },
+    {
+      "name": "anonymous official manifest matches",
+      "passed": true
+    },
+    {
+      "name": "complete official executable downloaded without authentication",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: 2.0.18 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: actual 2.0.18 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: real old updater offers 2.0.20 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: real updater downloaded and installed 2.0.20",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: installed manifest matches 2.0.20",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.20: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: 2.0.19 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: actual 2.0.19 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: real old updater offers 2.0.20 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: real updater downloaded and installed 2.0.20",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: installed manifest matches 2.0.20",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.20: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    }
+  ],
+  "scope": "Actual Windows programs and original online updater; isolated synthetic data. Not user PC or platform final upload."
+}
