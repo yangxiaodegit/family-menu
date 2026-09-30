@@ -1,0 +1,98 @@
+{
+  "version": "2.0.17",
+  "source_commit": "662404d72642f61a028ab868d5b052e82820f7e8",
+  "business_base": "be3f6188bdc02fcde5831833ccf347c5ddcfee15",
+  "native_verification": "passed",
+  "go_top_level": {
+    "pass": 598,
+    "skip": 123,
+    "fail": 0
+  },
+  "native_install_checks": [
+    {
+      "test": "installer completes with no console or second confirmation",
+      "pass": true
+    },
+    {
+      "test": "installed payload version",
+      "pass": true
+    },
+    {
+      "test": "custom workspace selection persisted",
+      "pass": true
+    },
+    {
+      "test": "normal shortcut-style launch reuses custom workspace",
+      "pass": true
+    },
+    {
+      "test": "authenticated online update API available",
+      "pass": true
+    },
+    {
+      "test": "update status rejects unauthenticated access",
+      "pass": true
+    },
+    {
+      "test": "served UI matches verified source online-update.js",
+      "pass": true
+    },
+    {
+      "test": "served UI matches verified source korea-operations.js",
+      "pass": true
+    },
+    {
+      "test": "served UI matches verified source korea-operations-model.js",
+      "pass": true
+    },
+    {
+      "test": "actual stable 2.0.16 service running before replacement",
+      "pass": true
+    },
+    {
+      "test": "installer completes with no console or second confirmation",
+      "pass": true
+    },
+    {
+      "test": "old service safely exits",
+      "pass": true
+    },
+    {
+      "test": "workspace objects preserved across .16 to .17",
+      "pass": true
+    },
+    {
+      "test": "all station and input sentinel bytes preserved",
+      "pass": true
+    },
+    {
+      "test": "upgraded service starts and preserves custom state path",
+      "pass": true
+    },
+    {
+      "test": "real GitHub channel check succeeds",
+      "pass": true
+    },
+    {
+      "test": "channel product identity is correct",
+      "pass": true
+    },
+    {
+      "test": "workspace database uses original consistent schema",
+      "pass": true
+    },
+    {
+      "test": "new host and tray cleanly exit",
+      "pass": true
+    }
+  ],
+  "business_sources_unchanged": 264,
+  "installer_sha256": "4d9e87cb205f76b62cbda0e982bf36d14480a671258adec128f7ac0235f8844a",
+  "installer_size": 16243712,
+  "independent_rebuild": "identical",
+  "unsigned": true,
+  "not_tested": [
+    "User current Windows 10/11 desktop",
+    "User real data and Coupang final acceptance"
+  ]
+}

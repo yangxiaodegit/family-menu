@@ -1,11 +1,11 @@
 {
   "product": "ThreeSiteReplenishment",
-  "version": "2.0.15",
+  "version": "2.0.17",
   "platform": "windows",
   "arch": "amd64",
-  "setup": "Three_Site_Replenishment_Setup_2.0.15.exe",
-  "size": 16251392,
-  "sha256": "60b8a27825df111e1a97604efd58ae05f144f71cd0f4b89d97f2fec39e6dcdf4",
-  "published_at": "2026-09-29T07:50:57.005408+00:00",
-  "notes": "韩国站已报送批次支持多选合并、数量预览、同SKU汇总；原批次完整归档不重复计库，保留历史成本与发票。"
+  "setup": "Three_Site_Replenishment_Setup_2.0.17.exe",
+  "size": 16243712,
+  "sha256": "4d9e87cb205f76b62cbda0e982bf36d14480a671258adec128f7ac0235f8844a",
+  "published_at": "2026-09-30T05:33:34.260232+00:00",
+  "notes": "保留已验证2.0.16的韩国批次合并与运营SKU零库存提醒；补齐在线更新、完整备份与保留原资料的安装流程。已撤下出错版本2.0.14/2.0.15。"
 }
