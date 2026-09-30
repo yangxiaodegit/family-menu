@@ -1,0 +1,40 @@
+name: Three Site 2.0.17 publish and verify
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/three-site-2017-transfer.json
+permissions:
+  contents: write
+concurrency:
+  group: three-site-public-online-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'yangxiaodegit/family-menu'
+    runs-on: windows-2022
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Validate approved public-only artifact and update channel atomically
+        run: python .github/scripts/publish-three-site-2017.py prepare
+      - name: Verify anonymous official download and original old-version online upgrade
+        run: python .github/scripts/verify-three-site-2017.py
+      - name: Publish verified release and withdraw broken installers and old release task
+        run: python .github/scripts/publish-three-site-2017.py finish
+      - name: Upload only sanitized publication evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: three-site-2017-official-publication-evidence
+          path: |
+            release-verification-2017/*.json
+          if-no-files-found: warn
+          retention-days: 30
