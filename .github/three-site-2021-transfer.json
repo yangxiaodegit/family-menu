@@ -1,0 +1,10 @@
+{
+  "version": "2.0.21",
+  "url": "https://sdmntprwestus.oaiusercontent.com/files/00000000-7a30-8230-a2c4-e8fe0791bc4c/raw?se=2026-09-30T10%3A19%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=8d8140dd-3edf-4a32-b6cc-fb9c71cb003d&skoid=89c13f8f-c33a-46d8-9bf3-ad7158c7790a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-30T09%3A15%3A14Z&ske=2026-10-01T09%3A15%3A14Z&sks=b&skv=2026-02-06&sig=5xMdEUrfdYno6HEYvQ5GvO3Zow2fLQAWrrd5WNuZs/o%3D",
+  "artifact_sha256": "a65ac6aca0320e0b649940990bd09b379447e5c2e176897f974b388d3b23fc59",
+  "installer_sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204",
+  "installer_size": 16258048,
+  "source_commit": "231af271b15ce305c5bf6d5c5d1d23f7dc3635f4",
+  "workflow_run": "36700493918",
+  "artifact_id": 11089454280
+}
