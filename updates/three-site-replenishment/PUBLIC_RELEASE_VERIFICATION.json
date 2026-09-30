@@ -1,103 +1,151 @@
 {
-  "version": "2.0.18",
-  "source_commit": "7c34f731d85f8b08a97019236ea59ffb1e28de5c",
-  "business_base": "be3f6188bdc02fcde5831833ccf347c5ddcfee15",
-  "native_verification": "passed",
-  "cross_volume_installation": true,
+  "version": "2.0.19",
+  "source_commit": "0e40e12f4654ce056426dd00a4d52c7108cec9d5",
+  "source_tree": "3dbe57e47547399194cfcf1da36991bef6cf497e",
+  "base_commit": "dac3ff0d54cbd6c8d27a9fe6211631c8e1a06457",
+  "workflow_run": "36683137683",
+  "definition": "calculated total = available + incoming + active reported = 0; no in-transit quantity",
   "go_top_level": {
-    "pass": 600,
+    "pass": 605,
     "skip": 123,
     "fail": 0
   },
-  "native_install_checks": [
+  "javascript": {
+    "pass": 96,
+    "fail": 0,
+    "skipped": 0
+  },
+  "native_edge_checks": [
     {
-      "test": "program and workspace reside on different Windows drives",
-      "pass": true
+      "name": "preservation baseline includes actual seeded source workbooks",
+      "passed": true
     },
     {
-      "test": "installer completes with no console or second confirmation",
-      "pass": true
+      "name": "packaged CSP remains enforced without unsafe-eval",
+      "passed": true
     },
     {
-      "test": "installed payload version",
-      "pass": true
+      "name": "top metric exists before first calculation without a fabricated zero",
+      "passed": true
     },
     {
-      "test": "custom workspace selection persisted",
-      "pass": true
+      "name": "top metric counts only total-zero/no-transit SKU",
+      "passed": true
     },
     {
-      "test": "normal shortcut-style launch reuses custom workspace",
-      "pass": true
+      "name": "total-zero metric is above the table filters",
+      "passed": true
     },
     {
-      "test": "authenticated online update API available",
-      "pass": true
+      "name": "table filtering does not alter the global Korea KPI",
+      "passed": true
     },
     {
-      "test": "update status rejects unauthenticated access",
-      "pass": true
+      "name": "metric click resets filters and opens matching SKU detail list",
+      "passed": true
     },
     {
-      "test": "served UI matches verified source online-update.js",
-      "pass": true
+      "name": "prominent KPI fully on screen at 1366x768",
+      "passed": true
     },
     {
-      "test": "served UI matches verified source korea-operations.js",
-      "pass": true
+      "name": "prominent KPI fully on screen at 1920x1080",
+      "passed": true
     },
     {
-      "test": "served UI matches verified source korea-operations-model.js",
-      "pass": true
+      "name": "prominent KPI fully on screen at 1024x768",
+      "passed": true
     },
     {
-      "test": "actual stable 2.0.16 service running before replacement",
-      "pass": true
+      "name": "top KPI export produces an existing file without new replenishment",
+      "passed": true
     },
     {
-      "test": "installer completes with no console or second confirmation",
-      "pass": true
+      "name": "independent scan matches computed KPI and lists total plus transit fields",
+      "passed": true
     },
     {
-      "test": "old service safely exits",
-      "pass": true
+      "name": "dashboard always includes the Korea zero-stock metric",
+      "passed": true
     },
     {
-      "test": "workspace objects preserved across .16 to .17",
-      "pass": true
+      "name": "dashboard metric links to identical unfiltered zero-stock list",
+      "passed": true
     },
     {
-      "test": "all station and input sentinel bytes preserved",
-      "pass": true
+      "name": "adding in-transit quantity removes zero-stock status and shows visible 0",
+      "passed": true
     },
     {
-      "test": "upgraded service starts and preserves custom state path",
-      "pass": true
+      "name": "zero count drill-down is empty, not stale previous SKU",
+      "passed": true
     },
     {
-      "test": "real GitHub channel check succeeds",
-      "pass": true
+      "name": "dashboard retains its metric when there are zero matching SKUs",
+      "passed": true
     },
     {
-      "test": "channel product identity is correct",
-      "pass": true
+      "name": "pop keeps its own inventory rules and no Korea-only metric",
+      "passed": true
     },
     {
-      "test": "workspace database uses original consistent schema",
-      "pass": true
+      "name": "jd keeps its own inventory rules and no Korea-only metric",
+      "passed": true
     },
     {
-      "test": "new host and tray cleanly exit",
-      "pass": true
+      "name": "no uncaught browser errors",
+      "passed": true
+    },
+    {
+      "name": "all original workbook and source bytes remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "no new workbook inserted into input folders",
+      "passed": true
     }
   ],
-  "business_sources_unchanged": 264,
-  "installer_sha256": "faa51f91f9f8ccdf55df9db8a784cf66997593c87b516e1398f02079f09d23e3",
-  "installer_size": 16245248,
+  "all_passed": true,
   "independent_rebuild": "identical",
-  "unsigned": true,
-  "not_tested": [
-    "User current Windows 10/11 desktop",
-    "User real data and Coupang final acceptance"
-  ]
+  "independent_rebuild_files": [
+    {
+      "file": "release/ReplenishmentSuite.exe",
+      "sha256": "420fbedf885c679ee7866295ffe66eda48377be2a47b2cf71724ab69a3a926bf",
+      "independent_sha256": "420fbedf885c679ee7866295ffe66eda48377be2a47b2cf71724ab69a3a926bf"
+    },
+    {
+      "file": "release/jd/JDSelfOperatedWorkbench.exe",
+      "sha256": "65bd74b1f365d2e189ecaa76cf2e127aab7d5b8f18aa2c3f86ff4bf47049add5",
+      "independent_sha256": "65bd74b1f365d2e189ecaa76cf2e127aab7d5b8f18aa2c3f86ff4bf47049add5"
+    },
+    {
+      "file": "release/pop/JDPOPWorkbench.exe",
+      "sha256": "3b39a6f5d8e5b779c52f587f4070608dae984dcedbc681d6237b8f852a3bd8d0",
+      "independent_sha256": "3b39a6f5d8e5b779c52f587f4070608dae984dcedbc681d6237b8f852a3bd8d0"
+    },
+    {
+      "file": "release/korea/CoupangKoreaWorkbench.exe",
+      "sha256": "0e66eb2ff73d9c0077ca4573fbd6bda6521dff48f51df749420d9bf63e13d483",
+      "independent_sha256": "0e66eb2ff73d9c0077ca4573fbd6bda6521dff48f51df749420d9bf63e13d483"
+    },
+    {
+      "file": "installer/suite_payload.zip",
+      "sha256": "d2e9910356ede21e576b1da5a2b67832e402c88b3ab96fb467fdbebb1dda1e43",
+      "independent_sha256": "d2e9910356ede21e576b1da5a2b67832e402c88b3ab96fb467fdbebb1dda1e43"
+    },
+    {
+      "file": "Three_Site_Replenishment_Portable_2.0.19.zip",
+      "sha256": "57bb390af03e71c757167818b93985eed56540e2459b76493a08ea24b5379d4e",
+      "independent_sha256": "57bb390af03e71c757167818b93985eed56540e2459b76493a08ea24b5379d4e"
+    },
+    {
+      "file": "Three_Site_Replenishment_Setup_2.0.19.exe",
+      "sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
+      "independent_sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba"
+    }
+  ],
+  "installer_sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
+  "installer_size": 16251392,
+  "scope": "Synthetic Windows Server 2022 data; not user PC or actual platform final acceptance. Historical private fixture skips are not passes. Go tests use vet=off; existing legacy Win32 vet warnings are not claimed fixed.",
+  "unsigned": true
 }

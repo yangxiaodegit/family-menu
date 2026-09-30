@@ -1,11 +1,11 @@
 {
   "product": "ThreeSiteReplenishment",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "platform": "windows",
   "arch": "amd64",
-  "setup": "Three_Site_Replenishment_Setup_2.0.18.exe",
-  "size": 16245248,
-  "sha256": "faa51f91f9f8ccdf55df9db8a784cf66997593c87b516e1398f02079f09d23e3",
-  "published_at": "2026-09-30T05:46:33.815200+00:00",
-  "notes": "保留已验证2.0.16的韩国批次合并与运营SKU零库存提醒；补齐在线更新、完整备份与保留原资料的安装流程。修复跨盘工作区安装兼容；最终频道撤下2.0.14/2.0.15及过渡2.0.17。"
+  "setup": "Three_Site_Replenishment_Setup_2.0.19.exe",
+  "size": 16251392,
+  "sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
+  "published_at": "2026-09-30T07:23:43.006236+00:00",
+  "notes": "韩国零库存改为计算总库存为0且无在途；韩国补货计划及总控台顶部常驻大号指标，点击查看明细。可售0但有待入库或已报送不再误报，未知库存不按0。保留原批次合并及在线升级。"
 }
