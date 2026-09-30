@@ -24,7 +24,6 @@ def wait(fn,seconds=60):
   time.sleep(.3)
  raise TimeoutError(last or 'condition timeout')
 def download(url,p,max_size,expected=None):
- # No GITHUB_TOKEN or Authorization header is passed to this anonymous request.
  r=subprocess.run([str(Path(os.environ['SystemRoot'])/'System32/curl.exe'),'-q','--ipv4','--http1.1','--fail','--silent','--show-error','--proto','=https','--max-redirs','0','--connect-timeout','15','--max-time','180','--max-filesize',str(max_size),'-H','Accept: application/vnd.github.raw+json','-H','User-Agent: ThreeSiteReleaseVerification/2.0.17','-o',str(p),url],capture_output=True,timeout=190)
  if r.returncode:raise RuntimeError('anonymous official download failed, curl='+str(r.returncode))
  if expected and digest(p)!=expected:raise ValueError('anonymous official download hash mismatch')
@@ -35,12 +34,14 @@ def request(conn,path,body=None):
  q=urllib.request.Request(u+'api/'+path,data=None if body is None else json.dumps(body).encode(),headers=h)
  with op.open(q,timeout=10) as r:return json.load(r)
 def connect(state,version):
- rt=json.loads((state/'runtime.json').read_text(encoding='utf-8'))
- if rt.get('version')!=version:return None
- op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
- conn=(rt,op);request(conn,'bootstrap',{'secret':rt['secret']});return conn
-def stop(conn):
- request(conn,'shutdown',{'confirm':True})
+ try:
+  rt=json.loads((state/'runtime.json').read_text(encoding='utf-8'))
+  if rt.get('version')!=version:return None
+  op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+  conn=(rt,op);request(conn,'bootstrap',{'secret':rt['secret']});return conn
+ except (OSError,ValueError,urllib.error.URLError):return None
+
+def stop(conn):request(conn,'shutdown',{'confirm':True})
 def seed(state,local):
  c=sqlite3.connect(state/'workspace.db')
  c.execute("INSERT OR REPLACE INTO objects(kind,id,site,updated,body) VALUES('publication-proof','persist','korea','2026-09-30','{\"label\":\"升级保留校验\",\"units\":17}')");c.commit();c.close()
@@ -80,11 +81,9 @@ def upgrade(old,manifest):
  s=wait(checked,100)
  check(old+' real updater offers only 2.0.17',s.get('available') and s['manifest']['version']==VERSION and s['manifest']['sha256']==manifest['sha256'])
  request(active,'update/install',{'version':VERSION,'confirm':True})
- oldconn=active
- stages=[]
- end=time.monotonic()+200
+ oldconn=active;stages=[];end=time.monotonic()+200
  while time.monotonic()<end:
-  conn=connect(state,VERSION) if (state/'runtime.json').exists() else None
+  conn=connect(state,VERSION)
   if conn:active=conn;break
   try:
    s=request(oldconn,'update/status');stage=s.get('stage')
@@ -100,8 +99,7 @@ def upgrade(old,manifest):
  check(old+' all station data sentinel bytes preserved',all(digest(Path(n))==h for n,h in hashes.items()))
  check(old+' custom workspace launch registration preserved',Path(json.loads((target/'online-install.json').read_text())['state_dir'])==state)
  st=request(active,'update/status');check(old+' new program retains online updater',st['current']==VERSION)
- request(active,'update/check',{})
- s=wait(checked,100)
+ request(active,'update/check',{});s=wait(checked,100)
  check(old+' upgraded program reports current with no broken downgrade',s.get('stage')=='current' and s['manifest']['version']==VERSION and not s['available'])
  for path,marker in [('korea-operations.js',b'korea_merge_commit'),('korea-operations.js',b'korea_zero_stock_export')]:
   with active[1].open(active[0]['url']+path,timeout=10) as r:b=r.read()
@@ -124,8 +122,7 @@ def main():
  stages={}
  for old in ['2.0.14','2.0.15']:stages[old]=upgrade(old,m)
  r={'version':VERSION,'all_passed':True,'size':m['size'],'sha256':m['sha256'],'workflow_run':os.environ.get('GITHUB_RUN_ID'),'native_os':'Windows Server 2022','anonymous_download':True,'upgrade_paths':['2.0.14 -> 2.0.17','2.0.15 -> 2.0.17'],'observed_stages':stages,'checks':checks,'scope':'Real installed Windows programs and original updater download/install flow; synthetic data only. No user computer or platform final upload tested.'}
- (OUT/'windows-official-update-2017.json').write_text(json.dumps(r,ensure_ascii=False,indent=2),encoding='utf-8')
- exe.unlink()
+ (OUT/'windows-official-update-2017.json').write_text(json.dumps(r,ensure_ascii=False,indent=2),encoding='utf-8');exe.unlink()
 try:main()
 finally:
  if active:
