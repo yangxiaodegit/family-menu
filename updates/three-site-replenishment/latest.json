@@ -1,11 +1,11 @@
 {
   "product": "ThreeSiteReplenishment",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "platform": "windows",
   "arch": "amd64",
-  "setup": "Three_Site_Replenishment_Setup_2.0.17.exe",
-  "size": 16243712,
-  "sha256": "4d9e87cb205f76b62cbda0e982bf36d14480a671258adec128f7ac0235f8844a",
-  "published_at": "2026-09-30T05:33:34.260232+00:00",
-  "notes": "保留已验证2.0.16的韩国批次合并与运营SKU零库存提醒；补齐在线更新、完整备份与保留原资料的安装流程。已撤下出错版本2.0.14/2.0.15。"
+  "setup": "Three_Site_Replenishment_Setup_2.0.18.exe",
+  "size": 16245248,
+  "sha256": "faa51f91f9f8ccdf55df9db8a784cf66997593c87b516e1398f02079f09d23e3",
+  "published_at": "2026-09-30T05:46:33.815200+00:00",
+  "notes": "保留已验证2.0.16的韩国批次合并与运营SKU零库存提醒；补齐在线更新、完整备份与保留原资料的安装流程。修复跨盘工作区安装兼容；最终频道撤下2.0.14/2.0.15及过渡2.0.17。"
 }

@@ -1,14 +1,19 @@
 {
-  "version": "2.0.17",
-  "source_commit": "662404d72642f61a028ab868d5b052e82820f7e8",
+  "version": "2.0.18",
+  "source_commit": "7c34f731d85f8b08a97019236ea59ffb1e28de5c",
   "business_base": "be3f6188bdc02fcde5831833ccf347c5ddcfee15",
   "native_verification": "passed",
+  "cross_volume_installation": true,
   "go_top_level": {
-    "pass": 598,
+    "pass": 600,
     "skip": 123,
     "fail": 0
   },
   "native_install_checks": [
+    {
+      "test": "program and workspace reside on different Windows drives",
+      "pass": true
+    },
     {
       "test": "installer completes with no console or second confirmation",
       "pass": true
@@ -87,8 +92,8 @@
     }
   ],
   "business_sources_unchanged": 264,
-  "installer_sha256": "4d9e87cb205f76b62cbda0e982bf36d14480a671258adec128f7ac0235f8844a",
-  "installer_size": 16243712,
+  "installer_sha256": "faa51f91f9f8ccdf55df9db8a784cf66997593c87b516e1398f02079f09d23e3",
+  "installer_size": 16245248,
   "independent_rebuild": "identical",
   "unsigned": true,
   "not_tested": [
