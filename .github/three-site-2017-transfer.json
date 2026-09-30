@@ -1,8 +1,0 @@
-{
-  "version": "2.0.17",
-  "artifact_sha256": "4dcfd7c7109dcba27765a7e511634be8419d005de5d52bfac0c4dfae5315a6a5",
-  "installer_sha256": "4d9e87cb205f76b62cbda0e982bf36d14480a671258adec128f7ac0235f8844a",
-  "source_commit": "662404d72642f61a028ab868d5b052e82820f7e8",
-  "contents": "Only the approved installer, update manifest, public verification and checksum. No private source or business data.",
-  "url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-4ee0-8209-98af-fc59482234e2/raw?se=2026-09-30T05%3A42%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=22620471-0836-5161-a798-6b3cca9d89f4&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-30T04%3A56%3A03Z&ske=2026-10-01T04%3A56%3A03Z&sks=b&skv=2026-02-06&sig=itfI5q9BGmg7sHSR2du4/Z8RJT6J0R1zpL%2BAEsN3a5w%3D"
-}
