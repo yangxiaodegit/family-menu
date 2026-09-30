@@ -1,0 +1,228 @@
+{
+  "version": "2.0.18",
+  "all_passed": true,
+  "size": 16245248,
+  "sha256": "faa51f91f9f8ccdf55df9db8a784cf66997593c87b516e1398f02079f09d23e3",
+  "workflow_run": "36675229839",
+  "native_os": "Windows Server 2022",
+  "anonymous_download": true,
+  "upgrade_paths": [
+    "2.0.14 -> 2.0.18",
+    "2.0.15 -> 2.0.18",
+    "2.0.17 -> 2.0.18"
+  ],
+  "observed_stages": {
+    "2.0.14": [
+      "downloading"
+    ],
+    "2.0.15": [
+      "downloading"
+    ],
+    "2.0.17": [
+      "downloading"
+    ]
+  },
+  "checks": [
+    {
+      "name": "channel has exact approved identity",
+      "passed": true
+    },
+    {
+      "name": "channel installer has exact size and SHA256",
+      "passed": true
+    },
+    {
+      "name": "anonymous official manifest matches",
+      "passed": true
+    },
+    {
+      "name": "anonymous official full executable downloaded",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 old fixture is available for controlled upgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 actual old host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 real updater offers only 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 real updater downloaded and installed new version",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 target manifest matches 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 all station data sentinel bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 custom workspace launch registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 upgraded program reports current with no broken downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 new host serves korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 new host serves korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.14 safe exit after successful forward upgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 old fixture is available for controlled upgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 actual old host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 real updater offers only 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 real updater downloaded and installed new version",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 target manifest matches 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 all station data sentinel bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 custom workspace launch registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 upgraded program reports current with no broken downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 new host serves korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 new host serves korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.15 safe exit after successful forward upgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 old fixture is available for controlled upgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 actual old host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 real updater offers only 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 real updater downloaded and installed new version",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 target manifest matches 2.0.18",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 creates complete backup before online installation",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 all station data sentinel bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 custom workspace launch registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 upgraded program reports current with no broken downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 new host serves korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 new host serves korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.17 safe exit after successful forward upgrade",
+      "passed": true
+    }
+  ],
+  "scope": "Real installed Windows programs and original updater download/install flow; synthetic data only. No user computer or platform final upload tested."
+}
