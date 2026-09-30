@@ -1,0 +1,39 @@
+name: Three Site 2.0.18 final publish and verify
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/three-site-2018-transfer.json]
+permissions:
+  contents: write
+concurrency:
+  group: three-site-public-online-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'yangxiaodegit/family-menu'
+    runs-on: windows-2022
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Prepare blob-verified scoped publication harness
+        run: python .github/scripts/prepare-three-site-2018.py
+      - name: Publish verified public-only installer and channel
+        run: python .github/scripts/publish-three-site-2018.generated.py prepare
+      - name: Anonymous download and real .14/.15/.17 online upgrades to .18
+        run: python .github/scripts/verify-three-site-2018.generated.py
+      - name: Remove retired versions and finish the public release
+        run: python .github/scripts/publish-three-site-2018.generated.py finish
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: three-site-2018-official-publication-evidence
+          path: release-verification-2018/*.json
+          if-no-files-found: warn
+          retention-days: 30
