@@ -1,22 +1,22 @@
 {
-  "version": "2.0.21",
-  "source_commit": "231af271b15ce305c5bf6d5c5d1d23f7dc3635f4",
-  "source_tree": "f1eba8a571e52b20507e0d535fef437376ec28d2",
-  "base_commit": "03df17b32d1612f77239b11eac637b4aa295c65b",
-  "workflow_run": "36700493918",
+  "version": "2.0.22",
+  "source_commit": "b1c23a8d2d0e43d807e03257ece67a6e5fe7d303",
+  "source_tree": "765d8dd23090436a18189c8104d432926ecc1b04",
+  "base_commit": "343d5438d28e38870814d544017577fac6808f0a",
+  "workflow_run": "36706311384",
   "go_top_level": {
-    "pass": 618,
+    "pass": 622,
     "skip": 124,
     "fail": 0
   },
   "javascript": {
-    "pass": 112,
+    "pass": 114,
     "fail": 0,
     "skipped": 0
   },
   "native_edge_checks": [
     {
-      "name": "native suite targets the final compiled 2.0.21 release",
+      "name": "native suite targets the final compiled 2.0.22 release",
       "passed": true
     },
     {
@@ -76,7 +76,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 staged approved 2.0.21 package is byte-identical",
+      "name": "2.0.18 staged approved 2.0.22 package is byte-identical",
       "passed": true
     },
     {
@@ -84,7 +84,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "name": "2.0.18 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
       "passed": true
     },
     {
@@ -92,7 +92,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 → 2.0.21 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.18 → 2.0.22 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -104,7 +104,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.21 installer",
+      "name": "installed SetupHelper is exact verified 2.0.22 installer",
       "passed": true
     },
     {
@@ -204,7 +204,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 staged approved 2.0.21 package is byte-identical",
+      "name": "2.0.19 staged approved 2.0.22 package is byte-identical",
       "passed": true
     },
     {
@@ -212,7 +212,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "name": "2.0.19 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
       "passed": true
     },
     {
@@ -220,7 +220,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 → 2.0.21 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.19 → 2.0.22 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -232,7 +232,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.21 installer",
+      "name": "installed SetupHelper is exact verified 2.0.22 installer",
       "passed": true
     },
     {
@@ -336,7 +336,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 staged approved 2.0.21 package is byte-identical",
+      "name": "2.0.20 staged approved 2.0.22 package is byte-identical",
       "passed": true
     },
     {
@@ -344,7 +344,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 auto-restart opens a visible actual 2.0.21 app-owned Edge window",
+      "name": "2.0.20 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
       "passed": true
     },
     {
@@ -352,7 +352,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 → 2.0.21 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.20 → 2.0.22 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -364,7 +364,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.21 installer",
+      "name": "installed SetupHelper is exact verified 2.0.22 installer",
       "passed": true
     },
     {
@@ -384,7 +384,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -396,7 +396,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -412,7 +412,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -428,7 +428,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -440,7 +440,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -452,7 +452,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -464,7 +464,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -476,7 +476,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -488,7 +488,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -500,23 +500,59 @@
       "passed": true
     },
     {
-      "name": "2.0.21 native Edge keeps packaged CSP enforced",
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
-      "name": "real upgraded application calculates synthetic Korea total-zero KPI",
+      "name": "from-2020 new available-zero counter is unknown before fresh calculation",
       "passed": true
     },
     {
-      "name": "real Korea drill-down still selects only the total-zero/no-transit SKU",
+      "name": "from-2020 available-zero includes in-transit SKU while original total-zero is unchanged",
       "passed": true
     },
     {
-      "name": "pop still opens its real business screen without Korea-only KPI",
+      "name": "from-2020 available-zero is a separate read-only metric, not the original drill-down",
       "passed": true
     },
     {
-      "name": "jd still opens its real business screen without Korea-only KPI",
+      "name": "fixed-2022-from-2020-korea-counters both Korea counters remain visible at 1366px",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2020-korea-counters both Korea counters remain visible at 1920px",
+      "passed": true
+    },
+    {
+      "name": "from-2020 original total-zero drill-down still selects only 000105, not in-transit 000101",
+      "passed": true
+    },
+    {
+      "name": "from-2020 filtering original total-zero rows does not narrow either banner count",
+      "passed": true
+    },
+    {
+      "name": "from-2020 text search to a single in-transit SKU leaves complete-preview counters unchanged",
+      "passed": true
+    },
+    {
+      "name": "from-2020 overview dashboard uses the same available-zero2 and total-zero1",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2020-dashboard-counters both Korea counters remain visible at 1366px",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2020-dashboard-counters both Korea counters remain visible at 1920px",
+      "passed": true
+    },
+    {
+      "name": "from-2020 pop remains free of Korea-only KPI",
+      "passed": true
+    },
+    {
+      "name": "from-2020 jd remains free of Korea-only KPI",
       "passed": true
     },
     {
@@ -532,15 +568,195 @@
       "passed": true
     },
     {
+      "name": "2.0.21 installation and custom workspace are on different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 official retained installer SHA256 matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 official installer size matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "actual official 2.0.21 host starts from its registered custom workspace",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 cold host actually retains its shortcut installation CWD",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 cold host opens its own visible native Edge app window",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 initial native window and owned Edge exit gracefully before seeding",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 seeded old host CWD is the directory the installer must rename",
+      "passed": true
+    },
+    {
+      "name": "official .21 saved preview predates the new available-zero metric",
+      "passed": true
+    },
+    {
+      "name": "pre-upgrade native backup ZIP has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "native backup contains workspace and business archive",
+      "passed": true
+    },
+    {
+      "name": "nested native business backup has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 original host is running immediately before native installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 actual old Edge window is still visible at installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 staged approved 2.0.22 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 old actual HWND disappeared and old owned browser exited without force",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 restarted Edge CWD cannot pin the installed program tree",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 → 2.0.22 safely shuts down old host and auto-restarts new host",
+      "passed": true
+    },
+    {
+      "name": "installed manifest equals final compiled release manifest",
+      "passed": true
+    },
+    {
+      "name": "every installed payload SHA256 matches final compiled manifest",
+      "passed": true
+    },
+    {
+      "name": "installed SetupHelper is exact verified 2.0.22 installer",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 custom cross-drive workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 database business sentinel records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 native backup archive retained byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 installed host retains its real online update endpoint",
+      "passed": true
+    },
+    {
+      "name": "real .21 saved preview survives .22 upgrade with new metric unknown",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview new available-zero counter is unknown before fresh calculation",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview available-zero includes in-transit SKU while original total-zero is unchanged",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview available-zero is a separate read-only metric, not the original drill-down",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1366px",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1920px",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview original total-zero drill-down still selects only 000105, not in-transit 000101",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview filtering original total-zero rows does not narrow either banner count",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview text search to a single in-transit SKU leaves complete-preview counters unchanged",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview overview dashboard uses the same available-zero2 and total-zero1",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1366px",
+      "passed": true
+    },
+    {
+      "name": "fixed-2022-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1920px",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview pop remains free of Korea-only KPI",
+      "passed": true
+    },
+    {
+      "name": "from-2021-saved-preview jd remains free of Korea-only KPI",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 all original workbook, station configuration and marker bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 no extra source workbook appears after installation and browser QA",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 final synthetic application and its native Edge window safely exit",
+      "passed": true
+    },
+    {
       "name": "native Edge has no uncaught application JavaScript errors",
       "passed": true
     },
     {
-      "name": "all three official legacy native upgrade paths completed",
+      "name": "all four official legacy native upgrade paths completed",
       "passed": true
     },
     {
-      "name": "all three actual application window lifetimes proved independently of Playwright",
+      "name": "all four actual application window lifetimes proved independently of Playwright",
       "passed": true
     },
     {
@@ -553,42 +769,42 @@
   "independent_rebuild_files": [
     {
       "file": "release/ReplenishmentSuite.exe",
-      "sha256": "b22b38d86d43fd559d44504fcc69608c395e95a59a0194d048d6833d0139bd2d",
-      "independent_sha256": "b22b38d86d43fd559d44504fcc69608c395e95a59a0194d048d6833d0139bd2d"
+      "sha256": "a6499a79ad6e93a2f4446be74a5484a04742cf16f7f2b718a6d4d8c0590d1f14",
+      "independent_sha256": "a6499a79ad6e93a2f4446be74a5484a04742cf16f7f2b718a6d4d8c0590d1f14"
     },
     {
       "file": "release/jd/JDSelfOperatedWorkbench.exe",
-      "sha256": "43356e172a1bcfc612376691e729618c263a226b72dabd5c937f8355d17de03c",
-      "independent_sha256": "43356e172a1bcfc612376691e729618c263a226b72dabd5c937f8355d17de03c"
+      "sha256": "c2bcdc4ec2858d2e44c0abfb79f3cabd681fca8df315ddcfe717c7351f79e005",
+      "independent_sha256": "c2bcdc4ec2858d2e44c0abfb79f3cabd681fca8df315ddcfe717c7351f79e005"
     },
     {
       "file": "release/pop/JDPOPWorkbench.exe",
-      "sha256": "e89fd701ccc1d39ae6ddaa57acb36de4b0a694767659f75b4b328348fe1ce45f",
-      "independent_sha256": "e89fd701ccc1d39ae6ddaa57acb36de4b0a694767659f75b4b328348fe1ce45f"
+      "sha256": "de60c9ec408d8ef0dd663a8a80d3f9cc059a576d578b54527ef53221dd7cc5f1",
+      "independent_sha256": "de60c9ec408d8ef0dd663a8a80d3f9cc059a576d578b54527ef53221dd7cc5f1"
     },
     {
       "file": "release/korea/CoupangKoreaWorkbench.exe",
-      "sha256": "c60bc44992ff34fc3b6b9c2aabab5bcbce11dd27e8e9c662e4bb101e7adb47b4",
-      "independent_sha256": "c60bc44992ff34fc3b6b9c2aabab5bcbce11dd27e8e9c662e4bb101e7adb47b4"
+      "sha256": "9eb70c9c039fa250c1c97358f52553dd0067f76c529b996edb0e12297bb71f3f",
+      "independent_sha256": "9eb70c9c039fa250c1c97358f52553dd0067f76c529b996edb0e12297bb71f3f"
     },
     {
       "file": "installer/suite_payload.zip",
-      "sha256": "23f6e9e9071fde5d3589aa84990c28ef8c3c3c3095a969173857f439d31150db",
-      "independent_sha256": "23f6e9e9071fde5d3589aa84990c28ef8c3c3c3095a969173857f439d31150db"
+      "sha256": "fbca0334a5937687ca3b3f1f091bdc4586e20297717939c1987ec9ced726af6c",
+      "independent_sha256": "fbca0334a5937687ca3b3f1f091bdc4586e20297717939c1987ec9ced726af6c"
     },
     {
-      "file": "Three_Site_Replenishment_Portable_2.0.21.zip",
-      "sha256": "da313cfc74f29f8d830cf01e709e26de2736f3584cbef241dcab3e307b05f642",
-      "independent_sha256": "da313cfc74f29f8d830cf01e709e26de2736f3584cbef241dcab3e307b05f642"
+      "file": "Three_Site_Replenishment_Portable_2.0.22.zip",
+      "sha256": "64af11386463690d559dcbb7028865dcf509aaa97d024b2746dd44516c34441c",
+      "independent_sha256": "64af11386463690d559dcbb7028865dcf509aaa97d024b2746dd44516c34441c"
     },
     {
-      "file": "Three_Site_Replenishment_Setup_2.0.21.exe",
-      "sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204",
-      "independent_sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204"
+      "file": "Three_Site_Replenishment_Setup_2.0.22.exe",
+      "sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28",
+      "independent_sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28"
     }
   ],
-  "installer_sha256": "eba574be88e6a9f2f824de1e74235137ca06120b04abe3f0d82ccd7d31847204",
-  "installer_size": 16258048,
-  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19/.20 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
+  "installer_sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28",
+  "installer_size": 16259072,
+  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19/.20/.21 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
   "unsigned": true
 }
