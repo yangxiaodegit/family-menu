@@ -1,0 +1,108 @@
+{
+  "version": "2.0.19",
+  "all_passed": true,
+  "size": 16251392,
+  "sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
+  "workflow_run": "36683677653",
+  "native_os": "Windows Server 2022",
+  "anonymous_download": true,
+  "cross_volume": true,
+  "upgrade_paths": [
+    "2.0.18 -> 2.0.19"
+  ],
+  "observed_stages": [
+    "downloading",
+    "installing"
+  ],
+  "checks": [
+    {
+      "name": "channel identity is correct",
+      "passed": true
+    },
+    {
+      "name": "channel installer matches size and SHA256",
+      "passed": true
+    },
+    {
+      "name": "anonymous official manifest matches",
+      "passed": true
+    },
+    {
+      "name": "complete official executable downloaded without authentication",
+      "passed": true
+    },
+    {
+      "name": "program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "actual 2.0.18 host started",
+      "passed": true
+    },
+    {
+      "name": "real old updater offers 2.0.19 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "real updater downloaded and installed 2.0.19",
+      "passed": true
+    },
+    {
+      "name": "installed manifest matches 2.0.19",
+      "passed": true
+    },
+    {
+      "name": "downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "new process cleanly exits",
+      "passed": true
+    }
+  ],
+  "scope": "Actual Windows programs and original online updater; isolated synthetic data. Not user PC or platform final upload."
+}

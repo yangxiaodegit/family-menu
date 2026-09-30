@@ -1,8 +1,0 @@
-{
-  "version": "2.0.19",
-  "url": "https://sdmntprcentralus.oaiusercontent.com/files/00000000-51fc-81f5-9cd7-e084f8d0c4d6/raw?se=2026-09-30T07%3A30%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=668434fa-37d7-551e-b2a1-f627478070e9&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-30T06%3A48%3A03Z&ske=2026-10-01T06%3A48%3A03Z&sks=b&skv=2026-02-06&sig=wKtFaw9Kex%2BD7uRw8TYEjzCyO1YYRS/a00BYFsHd2jA%3D",
-  "artifact_sha256": "320b14ad1bca46345de30a458d5310e37cd08c849f104d2d68c16c003690f2ff",
-  "installer_sha256": "9cbd7eaaecd67a7be3ef7c55a3700cb551beaa6cbfd7ef333e805615fefce1ba",
-  "installer_size": 16251392,
-  "source_commit": "0e40e12f4654ce056426dd00a4d52c7108cec9d5"
-}
