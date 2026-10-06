@@ -1,0 +1,42 @@
+name: Three Site 2.0.23 publish and verify
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/three-site-2023-transfer.json']
+permissions:
+  contents: write
+concurrency:
+  group: three-site-public-online-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'yangxiaodegit/family-menu'
+    runs-on: windows-2022
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Validate publication allowlist and integrity guards
+        run: python .github/scripts/test-three-site-2023-publication.py -v
+      - name: Prepare exact approved public-only installer and manifest
+        run: python .github/scripts/publish-three-site-2023.py prepare
+      - name: Anonymous complete download and cross-drive .18 through .22 to .23 online upgrades
+        run: python .github/scripts/verify-three-site-2023.py
+      - name: Promote verified release and retain stable rollback version
+        run: python .github/scripts/publish-three-site-2023.py finish
+      - name: Restore old stable channel after incomplete verification
+        if: failure()
+        run: python .github/scripts/publish-three-site-2023.py rollback
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: three-site-2023-official-publication-evidence
+          path: release-verification-2023/*.json
+          if-no-files-found: warn
+          retention-days: 30
