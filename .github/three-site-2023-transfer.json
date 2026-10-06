@@ -1,9 +1,0 @@
-{
-  "version": "2.0.23",
-  "url": "https://sdmntprwestus3.oaiusercontent.com/files/00000000-8024-81fd-9e36-c96df7658050/raw?se=2026-10-06T12%3A22%3A21Z&sp=r&sv=2026-02-06&sr=b&scid=bd601404-5b07-4e3f-9b4d-e0ca146eb8cc&skoid=5e713cdb-766b-475e-a3ca-8adb6cf99aa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T02%3A02%3A27Z&ske=2026-10-07T02%3A02%3A27Z&sks=b&skv=2026-02-06&sig=XYXYqGEWtZzbZj2d3lDYQ2vxLr%2Bw84GJrRYRXGIjYRQ%3D",
-  "artifact_sha256": "e9d8db770b1aaee9be26a6c0c23294691a44043b823cc68dfddde84116f5d05f",
-  "installer_sha256": "2674bb444778d79915e5be844c3217f061c7ecbe2a9e8ad6930c035adcc7ed10",
-  "installer_size": 16262144,
-  "source_commit": "ed9827b2d7a1b6d888e9ece00a4fa2f34a294372",
-  "workflow_run": 37460753213
-}
