@@ -1,11 +1,11 @@
 {
   "product": "ThreeSiteReplenishment",
-  "version": "2.0.22",
+  "version": "2.0.23",
   "platform": "windows",
   "arch": "amd64",
-  "setup": "Three_Site_Replenishment_Setup_2.0.22.exe",
-  "size": 16259072,
-  "sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28",
-  "published_at": "2026-09-30T11:11:03.344675+00:00",
-  "notes": "韩国站新增可售库存为0款数，包含可售为0但仍有在途的商品，总控台同步显示。原总库存零库存明细、导出和补货计算保持原口径。保留安装目录占用修复及更新确认校验。"
+  "setup": "Three_Site_Replenishment_Setup_2.0.23.exe",
+  "size": 16262144,
+  "sha256": "2674bb444778d79915e5be844c3217f061c7ecbe2a9e8ad6930c035adcc7ed10",
+  "published_at": "2026-10-06T12:11:24.637764+00:00",
+  "notes": "京东商品分级包含库存独有、仅维护及历史覆盖SKU，统一检索与保存校验；缺销量明确待核验。搜索覆盖全部候选，分页保留选择。厂直、下柜、黑名单、新品规则及补货校验保留，升级保留原配置和资料。"
 }

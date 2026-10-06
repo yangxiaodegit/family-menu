@@ -1,22 +1,194 @@
 {
-  "version": "2.0.22",
-  "source_commit": "b1c23a8d2d0e43d807e03257ece67a6e5fe7d303",
-  "source_tree": "765d8dd23090436a18189c8104d432926ecc1b04",
-  "base_commit": "343d5438d28e38870814d544017577fac6808f0a",
-  "workflow_run": "36706311384",
+  "version": "2.0.23",
+  "source_commit": "ed9827b2d7a1b6d888e9ece00a4fa2f34a294372",
+  "source_tree": "cb5044eead118991c47844d985474bb13e300620",
+  "base_commit": "a31cb4faf4655fa1007cb6e029bacf0841eb5f4c",
+  "workflow_run": "37460753213",
   "go_top_level": {
-    "pass": 622,
-    "skip": 124,
+    "pass": 630,
+    "skip": 125,
     "fail": 0
   },
   "javascript": {
-    "pass": 114,
+    "pass": 118,
     "fail": 0,
     "skipped": 0
   },
   "native_edge_checks": [
     {
-      "name": "native suite targets the final compiled 2.0.22 release",
+      "name": "native suite targets the final compiled 2.0.23 release",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 installation and custom workspace are on different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 official retained installer SHA256 matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 official installer size matches immutable fixture",
+      "passed": true
+    },
+    {
+      "name": "actual official 2.0.22 host starts from its registered custom workspace",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 cold host actually retains its shortcut installation CWD",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 cold host opens its own visible native Edge app window",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 initial native window and owned Edge exit gracefully before seeding",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 preservation baseline includes real seeded source workbooks",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 seeded old host CWD is the directory the installer must rename",
+      "passed": true
+    },
+    {
+      "name": "official .22 product management includes the same inventory-only SKU",
+      "passed": true
+    },
+    {
+      "name": "official .22 reproduces inventory-only SKU omitted from grading catalogue",
+      "passed": true
+    },
+    {
+      "name": "pre-upgrade native backup ZIP has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "native backup contains workspace and business archive",
+      "passed": true
+    },
+    {
+      "name": "nested native business backup has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 original host is running immediately before native installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 actual old Edge window is still visible at installer handoff",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 staged approved 2.0.23 package is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 old actual HWND disappeared and old owned browser exited without force",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 auto-restart opens a visible actual 2.0.23 app-owned Edge window",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 restarted Edge CWD cannot pin the installed program tree",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 → 2.0.23 safely shuts down old host and auto-restarts new host",
+      "passed": true
+    },
+    {
+      "name": "installed manifest equals final compiled release manifest",
+      "passed": true
+    },
+    {
+      "name": "every installed payload SHA256 matches final compiled manifest",
+      "passed": true
+    },
+    {
+      "name": "installed SetupHelper is exact verified 2.0.23 installer",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 custom cross-drive workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 database business sentinel records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 native backup archive retained byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 installed host retains its real online update endpoint",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 all original workbook, station configuration and marker bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 no extra source workbook appears after installation and browser QA",
+      "passed": true
+    },
+    {
+      "name": "native Edge finds inventory-only exact SKU with surrounding spaces",
+      "passed": true
+    },
+    {
+      "name": "inventory-only SKU remains pending with explicit origin",
+      "passed": true
+    },
+    {
+      "name": "cleared search pages full union without truncation",
+      "passed": true
+    },
+    {
+      "name": "page change preserves selected SKU",
+      "passed": true
+    },
+    {
+      "name": "saved-only SKU preserves leading zeros and manual size",
+      "passed": true
+    },
+    {
+      "name": "old saved grade survives missing source",
+      "passed": true
+    },
+    {
+      "name": "actual native policy save accepts inventory-only SKU",
+      "passed": true
+    },
+    {
+      "name": "policy save preserves all prior grade overrides",
+      "passed": true
+    },
+    {
+      "name": "policy save does not alter other settings",
+      "passed": true
+    },
+    {
+      "name": "native grading UI never rewrites source workbooks",
+      "passed": true
+    },
+    {
+      "name": "factory, off-shelf and blacklist rules remain effective",
+      "passed": true
+    },
+    {
+      "name": "grade save does not activate inventory-only replenishment",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 final synthetic application and its native Edge window safely exit",
       "passed": true
     },
     {
@@ -76,7 +248,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 staged approved 2.0.22 package is byte-identical",
+      "name": "2.0.18 staged approved 2.0.23 package is byte-identical",
       "passed": true
     },
     {
@@ -84,7 +256,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
+      "name": "2.0.18 auto-restart opens a visible actual 2.0.23 app-owned Edge window",
       "passed": true
     },
     {
@@ -92,7 +264,7 @@
       "passed": true
     },
     {
-      "name": "2.0.18 → 2.0.22 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.18 → 2.0.23 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -104,7 +276,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.22 installer",
+      "name": "installed SetupHelper is exact verified 2.0.23 installer",
       "passed": true
     },
     {
@@ -204,7 +376,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 staged approved 2.0.22 package is byte-identical",
+      "name": "2.0.19 staged approved 2.0.23 package is byte-identical",
       "passed": true
     },
     {
@@ -212,7 +384,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
+      "name": "2.0.19 auto-restart opens a visible actual 2.0.23 app-owned Edge window",
       "passed": true
     },
     {
@@ -220,7 +392,7 @@
       "passed": true
     },
     {
-      "name": "2.0.19 → 2.0.22 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.19 → 2.0.23 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -232,7 +404,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.22 installer",
+      "name": "installed SetupHelper is exact verified 2.0.23 installer",
       "passed": true
     },
     {
@@ -336,7 +508,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 staged approved 2.0.22 package is byte-identical",
+      "name": "2.0.20 staged approved 2.0.23 package is byte-identical",
       "passed": true
     },
     {
@@ -344,7 +516,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
+      "name": "2.0.20 auto-restart opens a visible actual 2.0.23 app-owned Edge window",
       "passed": true
     },
     {
@@ -352,7 +524,7 @@
       "passed": true
     },
     {
-      "name": "2.0.20 → 2.0.22 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.20 → 2.0.23 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -364,7 +536,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.22 installer",
+      "name": "installed SetupHelper is exact verified 2.0.23 installer",
       "passed": true
     },
     {
@@ -384,7 +556,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -396,7 +568,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -412,7 +584,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -428,7 +600,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -440,7 +612,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -452,7 +624,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -464,7 +636,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -476,7 +648,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -488,7 +660,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -500,7 +672,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -516,11 +688,11 @@
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2020-korea-counters both Korea counters remain visible at 1366px",
+      "name": "fixed-2023-from-2020-korea-counters both Korea counters remain visible at 1366px",
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2020-korea-counters both Korea counters remain visible at 1920px",
+      "name": "fixed-2023-from-2020-korea-counters both Korea counters remain visible at 1920px",
       "passed": true
     },
     {
@@ -540,11 +712,11 @@
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2020-dashboard-counters both Korea counters remain visible at 1366px",
+      "name": "fixed-2023-from-2020-dashboard-counters both Korea counters remain visible at 1366px",
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2020-dashboard-counters both Korea counters remain visible at 1920px",
+      "name": "fixed-2023-from-2020-dashboard-counters both Korea counters remain visible at 1920px",
       "passed": true
     },
     {
@@ -628,7 +800,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 staged approved 2.0.22 package is byte-identical",
+      "name": "2.0.21 staged approved 2.0.23 package is byte-identical",
       "passed": true
     },
     {
@@ -636,7 +808,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 auto-restart opens a visible actual 2.0.22 app-owned Edge window",
+      "name": "2.0.21 auto-restart opens a visible actual 2.0.23 app-owned Edge window",
       "passed": true
     },
     {
@@ -644,7 +816,7 @@
       "passed": true
     },
     {
-      "name": "2.0.21 → 2.0.22 safely shuts down old host and auto-restarts new host",
+      "name": "2.0.21 → 2.0.23 safely shuts down old host and auto-restarts new host",
       "passed": true
     },
     {
@@ -656,7 +828,7 @@
       "passed": true
     },
     {
-      "name": "installed SetupHelper is exact verified 2.0.22 installer",
+      "name": "installed SetupHelper is exact verified 2.0.23 installer",
       "passed": true
     },
     {
@@ -680,7 +852,7 @@
       "passed": true
     },
     {
-      "name": "2.0.22 native Edge keeps packaged CSP enforced",
+      "name": "2.0.23 native Edge keeps packaged CSP enforced",
       "passed": true
     },
     {
@@ -696,11 +868,11 @@
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1366px",
+      "name": "fixed-2023-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1366px",
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1920px",
+      "name": "fixed-2023-from-2021-saved-preview-korea-counters both Korea counters remain visible at 1920px",
       "passed": true
     },
     {
@@ -720,11 +892,11 @@
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1366px",
+      "name": "fixed-2023-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1366px",
       "passed": true
     },
     {
-      "name": "fixed-2022-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1920px",
+      "name": "fixed-2023-from-2021-saved-preview-dashboard-counters both Korea counters remain visible at 1920px",
       "passed": true
     },
     {
@@ -752,11 +924,11 @@
       "passed": true
     },
     {
-      "name": "all four official legacy native upgrade paths completed",
+      "name": "all five official legacy native upgrade paths completed",
       "passed": true
     },
     {
-      "name": "all four actual application window lifetimes proved independently of Playwright",
+      "name": "all five actual application window lifetimes proved independently of Playwright",
       "passed": true
     },
     {
@@ -769,42 +941,42 @@
   "independent_rebuild_files": [
     {
       "file": "release/ReplenishmentSuite.exe",
-      "sha256": "a6499a79ad6e93a2f4446be74a5484a04742cf16f7f2b718a6d4d8c0590d1f14",
-      "independent_sha256": "a6499a79ad6e93a2f4446be74a5484a04742cf16f7f2b718a6d4d8c0590d1f14"
+      "sha256": "66738328c119fead143496aa486245b2818e1b98ee841093f530b4b1e6935a3a",
+      "independent_sha256": "66738328c119fead143496aa486245b2818e1b98ee841093f530b4b1e6935a3a"
     },
     {
       "file": "release/jd/JDSelfOperatedWorkbench.exe",
-      "sha256": "c2bcdc4ec2858d2e44c0abfb79f3cabd681fca8df315ddcfe717c7351f79e005",
-      "independent_sha256": "c2bcdc4ec2858d2e44c0abfb79f3cabd681fca8df315ddcfe717c7351f79e005"
+      "sha256": "c8a8d7113044bf757a113289f7ae1a6d1b18224f898632d3dd618054bf6ec6a4",
+      "independent_sha256": "c8a8d7113044bf757a113289f7ae1a6d1b18224f898632d3dd618054bf6ec6a4"
     },
     {
       "file": "release/pop/JDPOPWorkbench.exe",
-      "sha256": "de60c9ec408d8ef0dd663a8a80d3f9cc059a576d578b54527ef53221dd7cc5f1",
-      "independent_sha256": "de60c9ec408d8ef0dd663a8a80d3f9cc059a576d578b54527ef53221dd7cc5f1"
+      "sha256": "f01c6106bed36b021d182bb63cc6232ed2af963ea404287d29866272fc3bbc18",
+      "independent_sha256": "f01c6106bed36b021d182bb63cc6232ed2af963ea404287d29866272fc3bbc18"
     },
     {
       "file": "release/korea/CoupangKoreaWorkbench.exe",
-      "sha256": "9eb70c9c039fa250c1c97358f52553dd0067f76c529b996edb0e12297bb71f3f",
-      "independent_sha256": "9eb70c9c039fa250c1c97358f52553dd0067f76c529b996edb0e12297bb71f3f"
+      "sha256": "9fd42a9c5fcd0a38cded08a615f1cdeccf920bc56ce7051c51bb45946a02d988",
+      "independent_sha256": "9fd42a9c5fcd0a38cded08a615f1cdeccf920bc56ce7051c51bb45946a02d988"
     },
     {
       "file": "installer/suite_payload.zip",
-      "sha256": "fbca0334a5937687ca3b3f1f091bdc4586e20297717939c1987ec9ced726af6c",
-      "independent_sha256": "fbca0334a5937687ca3b3f1f091bdc4586e20297717939c1987ec9ced726af6c"
+      "sha256": "542fd85598f886c0d2e07f9b27beae46c3696a1a5bd6f77e0498cb66bb92ce40",
+      "independent_sha256": "542fd85598f886c0d2e07f9b27beae46c3696a1a5bd6f77e0498cb66bb92ce40"
     },
     {
-      "file": "Three_Site_Replenishment_Portable_2.0.22.zip",
-      "sha256": "64af11386463690d559dcbb7028865dcf509aaa97d024b2746dd44516c34441c",
-      "independent_sha256": "64af11386463690d559dcbb7028865dcf509aaa97d024b2746dd44516c34441c"
+      "file": "Three_Site_Replenishment_Portable_2.0.23.zip",
+      "sha256": "c3e44b5ace2131ee1f280c414c1d8c745935fe3ec3b57769d83824262ef79f96",
+      "independent_sha256": "c3e44b5ace2131ee1f280c414c1d8c745935fe3ec3b57769d83824262ef79f96"
     },
     {
-      "file": "Three_Site_Replenishment_Setup_2.0.22.exe",
-      "sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28",
-      "independent_sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28"
+      "file": "Three_Site_Replenishment_Setup_2.0.23.exe",
+      "sha256": "2674bb444778d79915e5be844c3217f061c7ecbe2a9e8ad6930c035adcc7ed10",
+      "independent_sha256": "2674bb444778d79915e5be844c3217f061c7ecbe2a9e8ad6930c035adcc7ed10"
     }
   ],
-  "installer_sha256": "7bb12da35354ab620da9dc014bbe70832d3ff18e9033f2c577fa564429ae6a28",
-  "installer_size": 16259072,
-  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19/.20/.21 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
+  "installer_sha256": "2674bb444778d79915e5be844c3217f061c7ecbe2a9e8ad6930c035adcc7ed10",
+  "installer_size": 16262144,
+  "scope": "Isolated synthetic native Windows/Edge tests; private fixture skips are not passes. UI fixture updater regression is separate from native installer handoff and subsequent public .18/.19/.20/.21/.22 online-download validation. Legacy full-module Win32 vet warnings excluded; updater vet passed. Not user PC or business platform acceptance.",
   "unsigned": true
 }
