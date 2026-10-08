@@ -1,0 +1,11 @@
+{
+  "product": "ThreeSiteReplenishment",
+  "version": "2.0.24",
+  "platform": "windows",
+  "arch": "amd64",
+  "setup": "Three_Site_Replenishment_Setup_2.0.24.exe",
+  "size": 16343040,
+  "sha256": "1670c013f1aad4ae9686c9357694476d0ff6c1b517132dbbf7228027883addde",
+  "published_at": "2026-10-07T01:55:41.502117+00:00",
+  "notes": "三站长期参数及商品级别、新品、库存规则可在程序维护；旧表首次兼容迁入，已保存参数和显式新品true/false保留。POP打开设置页即迁入商品目录。韩国货值与装箱配方内置，界面统一，检查框与批量选择优化。升级保留原配置和资料。"
+}

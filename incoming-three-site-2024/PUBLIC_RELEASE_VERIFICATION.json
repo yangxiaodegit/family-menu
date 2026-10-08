@@ -1,0 +1,171 @@
+{
+  "version": "2.0.24",
+  "all_passed": true,
+  "source_commit": "8c51bafdf98d5d769a574d903dc0d3d1a68f9a45",
+  "source_tree": "687d6146e74f188c12f2ab5c2c85da05dd4d5122",
+  "workflow_run": "37557744949",
+  "installer_sha256": "1670c013f1aad4ae9686c9357694476d0ff6c1b517132dbbf7228027883addde",
+  "installer_size": 16343040,
+  "independent_rebuild": "identical",
+  "independent_rebuild_files": [
+    {
+      "file": "release/ReplenishmentSuite.exe",
+      "sha256": "b12afa66f6b71c5ae4e6e7fdc7cf109d8768a32ccc7d6817e1d78fd8435011bb",
+      "independent_sha256": "b12afa66f6b71c5ae4e6e7fdc7cf109d8768a32ccc7d6817e1d78fd8435011bb"
+    },
+    {
+      "file": "release/jd/JDSelfOperatedWorkbench.exe",
+      "sha256": "74158bdc5dfa050e5b461a997437cbca8cd194d47f35572b73fa9e5ca86635be",
+      "independent_sha256": "74158bdc5dfa050e5b461a997437cbca8cd194d47f35572b73fa9e5ca86635be"
+    },
+    {
+      "file": "release/pop/JDPOPWorkbench.exe",
+      "sha256": "601473f0e04abe40f96e3271a52546de8d431de08682f13fa5636fa85588608d",
+      "independent_sha256": "601473f0e04abe40f96e3271a52546de8d431de08682f13fa5636fa85588608d"
+    },
+    {
+      "file": "release/korea/CoupangKoreaWorkbench.exe",
+      "sha256": "895944ed820f32da1d86ec5d89ff30d76da1d219eafdd95ce4588c66d0f305a8",
+      "independent_sha256": "895944ed820f32da1d86ec5d89ff30d76da1d219eafdd95ce4588c66d0f305a8"
+    },
+    {
+      "file": "installer/suite_payload.zip",
+      "sha256": "ad3329adf84d7b58a389d477084d01ce88f11345a1f20c3bfc6b390a4fa5be80",
+      "independent_sha256": "ad3329adf84d7b58a389d477084d01ce88f11345a1f20c3bfc6b390a4fa5be80"
+    },
+    {
+      "file": "Three_Site_Replenishment_Portable_2.0.24.zip",
+      "sha256": "a4fcc56c083949e9c528a565338d71a09e0206700f2ab034601785e2ac35be78",
+      "independent_sha256": "a4fcc56c083949e9c528a565338d71a09e0206700f2ab034601785e2ac35be78"
+    },
+    {
+      "file": "Three_Site_Replenishment_Setup_2.0.24.exe",
+      "sha256": "1670c013f1aad4ae9686c9357694476d0ff6c1b517132dbbf7228027883addde",
+      "independent_sha256": "1670c013f1aad4ae9686c9357694476d0ff6c1b517132dbbf7228027883addde"
+    }
+  ],
+  "go_top_level": {
+    "pass": 641,
+    "skip": 126,
+    "fail": 0
+  },
+  "javascript": {
+    "pass": 120,
+    "fail": 0,
+    "skipped": 0
+  },
+  "browser_checks": 40,
+  "native_edge_checks": [
+    {
+      "name": "old installer is the authenticated published .23 package",
+      "passed": true
+    },
+    {
+      "name": "installed application and custom workspace use different Windows volumes",
+      "passed": true
+    },
+    {
+      "name": "actual .23 visible app window and installed host start",
+      "passed": true
+    },
+    {
+      "name": "old host and actual Edge window are still alive at handoff",
+      "passed": true
+    },
+    {
+      "name": "native installer closes old window and restarts the .24 app without force",
+      "passed": true
+    },
+    {
+      "name": "restarted host CWD equals the installer explicit launch directory",
+      "passed": true
+    },
+    {
+      "name": "new independently owned Edge CWD does not pin the installation tree",
+      "passed": true
+    },
+    {
+      "name": "every installed payload and setup helper matches the candidate build",
+      "passed": true
+    },
+    {
+      "name": "cross-volume workspace and business sentinel rows survive upgrade",
+      "passed": true
+    },
+    {
+      "name": "jd preexisting fields and unknown 64-bit values survive migration",
+      "passed": true
+    },
+    {
+      "name": "jd saved new-product override survives and program catalogue is populated",
+      "passed": true
+    },
+    {
+      "name": "jd migration retains an exact original configuration backup",
+      "passed": true
+    },
+    {
+      "name": "jd explicit false is not overwritten by compatibility import",
+      "passed": true
+    },
+    {
+      "name": "pop preexisting fields and unknown 64-bit values survive migration",
+      "passed": true
+    },
+    {
+      "name": "pop saved new-product override survives and program catalogue is populated",
+      "passed": true
+    },
+    {
+      "name": "pop migration retains an exact original configuration backup",
+      "passed": true
+    },
+    {
+      "name": "pop explicit false is not overwritten by compatibility import",
+      "passed": true
+    },
+    {
+      "name": "korea preexisting fields and unknown 64-bit values survive migration",
+      "passed": true
+    },
+    {
+      "name": "korea saved new-product override survives and program catalogue is populated",
+      "passed": true
+    },
+    {
+      "name": "korea migration retains an exact original configuration backup",
+      "passed": true
+    },
+    {
+      "name": "korea explicit false is not overwritten by compatibility import",
+      "passed": true
+    },
+    {
+      "name": "packing configuration migrates without changing raw inbound documents",
+      "passed": true
+    },
+    {
+      "name": "all original raw data files remain byte-for-byte identical",
+      "passed": true
+    },
+    {
+      "name": "jd explicit saved false survives installed application restart",
+      "passed": true
+    },
+    {
+      "name": "pop explicit saved false survives installed application restart",
+      "passed": true
+    },
+    {
+      "name": "korea explicit saved false survives installed application restart",
+      "passed": true
+    },
+    {
+      "name": "packing recipe survives installed application restart",
+      "passed": true
+    }
+  ],
+  "synthetic_data_only": true,
+  "unsigned": true,
+  "scope": "Exact Windows/Linux CI, actual .23-to-.24 Win32 owned Edge upgrade and settings migration, 40 real Edge/API browser checks, seven identical clean-source rebuild artifacts. No private download URL, raw fixture paths, workspace configuration, business data or source archive."
+}
