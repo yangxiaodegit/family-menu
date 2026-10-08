@@ -1,0 +1,1024 @@
+{
+  "version": "2.0.24",
+  "all_passed": true,
+  "size": 16343040,
+  "sha256": "1670c013f1aad4ae9686c9357694476d0ff6c1b517132dbbf7228027883addde",
+  "workflow_run": "37776278821",
+  "native_os": "Windows Server 2022",
+  "anonymous_download": true,
+  "cross_volume": true,
+  "upgrade_paths": [
+    "2.0.18 -> 2.0.24",
+    "2.0.19 -> 2.0.24",
+    "2.0.20 -> 2.0.24",
+    "2.0.21 -> 2.0.24",
+    "2.0.22 -> 2.0.24",
+    "2.0.23 -> 2.0.24"
+  ],
+  "observed_stages": {
+    "2.0.18": [
+      "downloading",
+      "installing"
+    ],
+    "2.0.19": [
+      "preparing",
+      "downloading",
+      "installing"
+    ],
+    "2.0.20": [
+      "downloading",
+      "installing"
+    ],
+    "2.0.21": [
+      "downloading",
+      "installing"
+    ],
+    "2.0.22": [
+      "downloading",
+      "installing"
+    ],
+    "2.0.23": [
+      "downloading",
+      "installing"
+    ]
+  },
+  "checks": [
+    {
+      "name": "channel identity is correct",
+      "passed": true
+    },
+    {
+      "name": "channel installer matches size and SHA256",
+      "passed": true
+    },
+    {
+      "name": "anonymous official manifest matches",
+      "passed": true
+    },
+    {
+      "name": "complete official executable downloaded without authentication",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: 2.0.18 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: actual 2.0.18 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.18 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: 2.0.19 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: actual 2.0.19 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.19 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: 2.0.20 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: actual 2.0.20 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.20 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: 2.0.21 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: actual 2.0.21 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.21 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: 2.0.22 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: actual 2.0.22 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.22 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: program and state use different Windows drives",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: prior stable installer SHA256 verified",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: 2.0.23 initial isolated installation completed",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: actual 2.0.23 host started",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: real old updater offers 2.0.24 and exact verified hash",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: real updater downloaded and installed 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: installed manifest matches 2.0.24",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: downloaded installer hash is identical",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: jd original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: jd saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: jd explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: jd unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: pop original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: pop saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: pop explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: pop unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: korea original configuration fields and exact unknown 64-bit value preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: korea saved new-product flag preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: korea explicit saved false survives reread",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: korea unknown 64-bit field survives new version save",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: custom database records preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: all station synthetic data bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: custom workspace registration preserved",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: pre-upgrade ZIP backup exists and has valid CRC",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new program retains online updater",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: updated program reports current without downgrade",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes korea_merge_commit",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes korea_zero_stock_export",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes zero-stock-card",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes zero-available-metric",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes 可售库存为0",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes checkedRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes sameRelease",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes manifest:m",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes jdCatalogRows",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes pageJDCatalog",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes programProductsPage",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes businessSettingsPanel",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: new host includes packingDialog",
+      "passed": true
+    },
+    {
+      "name": "2.0.23 -> 2.0.24: old updater process cleanly exits and new runtime registration is removed",
+      "passed": true
+    }
+  ],
+  "scope": "Actual Windows programs and original online updater; isolated synthetic data. Not user PC or platform final upload."
+}
